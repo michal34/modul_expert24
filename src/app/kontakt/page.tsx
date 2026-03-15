@@ -24,10 +24,12 @@ export default function ContactPage() {
 								padding: "50px",
 							}}
 						>
-							<h1 className="text-[34px] font-semibold leading-[1.05] text-center tracking-[-0.03em] md:text-[52px]">
+							<h1
+								className="font-semibold text-center tracking-[-0.03em]"
+								style={{ fontSize: "clamp(28px, 5vw, 46px)", lineHeight: "1.05" }}
+							>
 								Napisz do nas
 							</h1>
-
 							<p className="mt-8 text-center max-w-[760px] text-[16px] leading-[1.8] text-black/70 md:text-[18px]">
 								Opisz krótko, czego potrzebujesz. Skontaktujemy się z Tobą i przygotujemy propozycję
 								dopasowaną do Twojej inwestycji.
