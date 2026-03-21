@@ -121,7 +121,7 @@ export default function Footer() {
 					<div className="w-full overflow-hidden rounded-[10px] border border-black/10 shadow-sm">
 						<iframe
 							title="Mapa dojazdu - Mikołaja Kopernika 17, Mińsk Mazowiecki"
-							src="https://www.google.com/maps?q=Miko%C5%82aja%20Kopernika%2017%2C%2005-300%20Mi%C5%84sk%20Mazowiecki%2C%20Polska&z=16&output=embed"
+							src="https://www.google.com/maps?q=Choszcz%C3%B3wka%20Rudzka%2013%2C%2005-311%20Polska&z=16&output=embed"
 							width="100%"
 							height="320"
 							style={{ border: 0 }}
