@@ -25,11 +25,11 @@ export const metadata: Metadata = {
 
 const localBusinessSchema = {
 	"@context": "https://schema.org",
-	"@type": "LocalBusiness",
+	"@type": "HomeAndConstructionBusiness",
 	name: "Moduł Expert24",
 	image: "https://modulexpert24.pl/og-image.jpg",
 	url: "https://modulexpert24.pl",
-	telephone: "+48XXXXXXXXX",
+	telephone: "+48575203444",
 	address: {
 		"@type": "PostalAddress",
 		streetAddress: "Choszczówka Rudzka 13",
@@ -59,7 +59,38 @@ const localBusinessSchema = {
 			closes: "17:00",
 		},
 	],
-	sameAs: ["https://www.facebook.com/twojprofil", "https://www.instagram.com/twojprofil"],
+	sameAs: [
+		// "https://www.facebook.com/twojprofil", "https://www.instagram.com/twojprofil"
+	],
+};
+
+const serviceSchema = {
+	"@context": "https://schema.org",
+	"@type": "Service",
+	name: "Domy modułowe i pawilony modułowe",
+	description:
+		"Projektowanie, produkcja i sprzedaż domów modułowych oraz pawilonów modułowych na terenie województwa mazowieckiego, w tym Warszawy i Mińska Mazowieckiego.",
+	provider: {
+		"@type": "LocalBusiness",
+		name: "Moduł Expert24",
+		url: "https://modulexpert24.pl",
+	},
+	areaServed: [
+		{
+			"@type": "City",
+			name: "Warszawa",
+		},
+		{
+			"@type": "City",
+			name: "Mińsk Mazowiecki",
+		},
+		{
+			"@type": "AdministrativeArea",
+			name: "Mazowieckie",
+		},
+	],
+	serviceType: ["Domy modułowe", "Pawilony modułowe", "Domki całoroczne"],
+	url: "https://modulexpert24.pl",
 };
 
 export default function HomePage() {
@@ -69,6 +100,12 @@ export default function HomePage() {
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{
 					__html: JSON.stringify(localBusinessSchema),
+				}}
+			/>
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{
+					__html: JSON.stringify(serviceSchema),
 				}}
 			/>
 			<Header />
