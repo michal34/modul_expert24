@@ -23,9 +23,54 @@ export const metadata: Metadata = {
 	},
 };
 
+const localBusinessSchema = {
+	"@context": "https://schema.org",
+	"@type": "LocalBusiness",
+	name: "Moduł Expert24",
+	image: "https://modulexpert24.pl/og-image.jpg",
+	url: "https://modulexpert24.pl",
+	telephone: "+48XXXXXXXXX",
+	address: {
+		"@type": "PostalAddress",
+		streetAddress: "Choszczówka Rudzka 13",
+		postalCode: "05-311",
+		addressLocality: "Dębe Wielkie",
+		addressCountry: "PL",
+	},
+	areaServed: [
+		{
+			"@type": "City",
+			name: "Warszawa",
+		},
+		{
+			"@type": "City",
+			name: "Mińsk Mazowiecki",
+		},
+		{
+			"@type": "AdministrativeArea",
+			name: "Mazowieckie",
+		},
+	],
+	openingHoursSpecification: [
+		{
+			"@type": "OpeningHoursSpecification",
+			dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+			opens: "08:00",
+			closes: "17:00",
+		},
+	],
+	sameAs: ["https://www.facebook.com/twojprofil", "https://www.instagram.com/twojprofil"],
+};
+
 export default function HomePage() {
 	return (
 		<>
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{
+					__html: JSON.stringify(localBusinessSchema),
+				}}
+			/>
 			<Header />
 			<main>
 				<Hero />

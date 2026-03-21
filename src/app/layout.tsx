@@ -55,19 +55,16 @@ export const metadata: Metadata = {
 	},
 
 	icons: {
-		icon: "/favicon.ico",
-		shortcut: "/favicon.ico",
-		apple: "/apple-touch-icon.png",
+		icon: [{ url: "/favicon.ico" }, { url: "/icon-192.png", sizes: "192x192", type: "image/png" }],
+		apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
 	},
+
+	manifest: "/site.webmanifest",
 
 	category: "construction",
 };
 
-export default function RootLayout({
-	children,
-}: Readonly<{
-	children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="pl">
 			<body>{children}</body>
