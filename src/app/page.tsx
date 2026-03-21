@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 	description:
 		"Producent domów modułowych i pawilonów modułowych na terenie Mazowieckiego. Warszawa, Mińsk Mazowiecki i okolice. Sprawdź ofertę i realizacje.",
 	alternates: {
-		canonical: "https://twojadomena.pl",
+		canonical: "https://modulexpert24.pl",
 	},
 };
 

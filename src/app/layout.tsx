@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-	metadataBase: new URL("https://twojadomena.pl"),
+	metadataBase: new URL("https://modulexpert24.pl"),
 
 	title: {
 		default: "Domy modułowe i pawilony modułowe – Mazowieckie | Warszawa | Mińsk Mazowiecki",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 		title: "Domy modułowe i pawilony modułowe – Mazowieckie | Warszawa | Mińsk Mazowiecki",
 		description:
 			"Producent domów modułowych i pawilonów modułowych. Szybka realizacja, wysoka jakość i nowoczesne rozwiązania dla klientów z Mazowsza.",
-		url: "https://twojadomena.pl",
+		url: "https://modulexpert24.pl",
 		siteName: "Moduł Expert24",
 		locale: "pl_PL",
 		type: "website",

@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-	const base = "https://twojadomena.pl";
+	const base = "https://modulexpert24.pl";
 
 	return [
 		{
