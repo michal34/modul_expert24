@@ -72,9 +72,9 @@ export default function Footer() {
 							<li className="flex items-start gap-3">
 								<MapPin className="mt-[3px] h-5 w-5 text-[#ef9228]" />
 								<address className="not-italic leading-[1.6]">
-									Mikołaja Kopernika 17
+									Rudzka 13
 									<br />
-									05-300 Mińsk Mazowiecki
+									05-311 Choszczówka
 									<br />
 									Polska
 								</address>
@@ -83,26 +83,19 @@ export default function Footer() {
 							<li className="flex items-center gap-3">
 								<Mail className="h-5 w-5 text-[#ef9228]" />
 								<a href="mailto:kontakt@modulexpert24.pl" className="hover:underline">
-									kontakt@modulexpert24.pl
+									biuro@modulexpert24.pl
 								</a>
 							</li>
 
 							<li className="flex items-center gap-3">
 								<Phone className="h-5 w-5 text-[#ef9228]" />
 								<a href="tel:+48123123123" className="hover:underline">
-									+48 123 123 123
-								</a>
-							</li>
-
-							<li className="flex items-center gap-3">
-								<Phone className="h-5 w-5 text-[#ef9228]" />
-								<a href="tel:+48321321321" className="hover:underline">
-									+48 321 321 321
+									+48 575-203-444
 								</a>
 							</li>
 						</ul>
 
-						<div className="mt-4 space-y-3 text-[15px]">
+						{/* <div className="mt-4 space-y-3 text-[15px]">
 							<a
 								href="https://facebook.com"
 								target="_blank"
@@ -121,7 +114,7 @@ export default function Footer() {
 								<FaInstagram className="h-5 w-5" />
 								<span className="text-black/85">@modułexpert24</span>
 							</a>
-						</div>
+						</div> */}
 					</div>
 
 					{/* MAPA */}

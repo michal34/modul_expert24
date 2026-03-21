@@ -118,7 +118,7 @@ export default function ContactPage() {
 									/>
 								</div>
 
-								<div className="flex flex-col items-center border-t border-black/10 pt-8">
+								<div className="flex flex-col items-center pt-8">
 									<button
 										type="submit"
 										style={{
@@ -163,7 +163,7 @@ export default function ContactPage() {
 
 							<div className="mt-12 flex flex-col items-center gap-4">
 								<a
-									href="tel:+48123123123"
+									href="tel:+48575203444"
 									className="inline-flex min-h-[56px] min-w-[220px] items-center justify-center rounded-full border border-[#ef9228] bg-white px-8 text-[17px] font-medium text-black transition-all duration-300 hover:bg-[#ef9228] hover:text-white"
 								>
 									Zadzwoń teraz
