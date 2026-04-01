@@ -1,9 +1,17 @@
 "use client";
 
+import { useActionState } from "react";
+import { sendPricingForm } from "@/src/actions/contact";
 import SubmitButton from "@/components/ui/SubmitButton";
-import { sendContactForm } from "@/src/actions/contact";
+
+const initialState = {
+	success: "",
+	error: "",
+};
 
 export default function PricingForm() {
+	const [state, formAction] = useActionState(sendPricingForm, initialState);
+
 	return (
 		<section className="py-20">
 			<div className="mx-auto max-w-[1200px] px-6">
@@ -46,12 +54,21 @@ export default function PricingForm() {
 							Chcesz wycenę swojego pawilonu?
 						</h2>
 
-						<form action={sendContactForm} className="mt-8 flex flex-col gap-5 max-w-[420px]">
-							<input type="hidden" name="redirectTo" value="/?sent=1" />
+						<form action={formAction} className="mt-8 flex flex-col gap-5 max-w-[420px]">
+							{/* honeypot anty-spam */}
+							<input
+								type="text"
+								name="company"
+								tabIndex={-1}
+								autoComplete="off"
+								className="hidden"
+							/>
+
 							<input
 								name="name"
 								type="text"
 								placeholder="Imię..."
+								required
 								className="h-[48px] rounded-full border border-black/30 px-5 outline-none focus:border-[#f1892d]"
 							/>
 
@@ -59,6 +76,7 @@ export default function PricingForm() {
 								name="phone"
 								type="tel"
 								placeholder="Telefon..."
+								required
 								className="h-[48px] rounded-full border border-black/30 px-5 outline-none focus:border-[#f1892d]"
 							/>
 
@@ -66,6 +84,7 @@ export default function PricingForm() {
 								name="email"
 								type="email"
 								placeholder="E-mail..."
+								required
 								className="h-[48px] rounded-full border border-black/30 px-5 outline-none focus:border-[#f1892d]"
 							/>
 
@@ -73,12 +92,20 @@ export default function PricingForm() {
 								name="message"
 								type="text"
 								placeholder="Wiadomość..."
+								required
 								className="h-[48px] rounded-full border border-black/30 px-5 outline-none focus:border-[#f1892d]"
 							/>
 
 							<div className="flex justify-center">
 								<SubmitButton size="small" />
 							</div>
+
+							{/* komunikaty */}
+							{state?.success && (
+								<p className="text-center text-sm text-green-600">{state.success}</p>
+							)}
+
+							{state?.error && <p className="text-center text-sm text-red-600">{state.error}</p>}
 						</form>
 					</div>
 				</div>
