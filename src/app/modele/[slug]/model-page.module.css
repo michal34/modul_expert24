@@ -1,0 +1,26 @@
+.page {
+	width: 100%;
+	background: #ffffff;
+}
+
+.wrapper {
+	width: 100%;
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 40px 20px;
+}
+
+.fullImage {
+	display: block;
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+}
+
+.seoContent {
+	position: absolute;
+	left: -9999px;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
