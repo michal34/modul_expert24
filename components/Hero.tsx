@@ -5,7 +5,7 @@ export default function Hero() {
 		<section className="relative overflow-hidden">
 			<div className="relative h-[720px] w-full sm:h-[780px] md:h-[620px] lg:h-[760px] xl:h-[820px]">
 				<Image
-					src="/images/hero.jpg"
+					src="/images/hero.webp"
 					alt="Nowoczesny dom modułowy"
 					fill
 					priority

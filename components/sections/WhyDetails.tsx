@@ -16,7 +16,7 @@ export default function WhyDetails() {
 					{/* obrazek */}
 					<div className="relative mx-auto aspect-[1.5/1] w-full max-w-[520px]">
 						<Image
-							src="/images/why-details-building.png"
+							src="/images/models/denver.webp"
 							alt="Nowoczesny pawilon modułowy"
 							fill
 							className="object-contain"

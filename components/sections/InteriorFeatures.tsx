@@ -16,7 +16,7 @@ export default function InteriorFeatures() {
 				<div className="grid items-center gap-10 md:gap-14 lg:grid-cols-[1fr_1fr]">
 					<div className="relative mx-auto aspect-[1.55/1] w-full max-w-[520px] overflow-hidden rounded-[24px]">
 						<Image
-							src="/images/interior-features.jpg"
+							src="/images/interior-features.webp"
 							alt="Nowoczesne wnętrze pawilonu modułowego"
 							fill
 							className="object-cover"
