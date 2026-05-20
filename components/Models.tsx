@@ -10,22 +10,22 @@ type ModelItem = {
 const models: ModelItem[] = [
 	{
 		name: "Model WYOMING",
-		image: "/images/models/wyoming.png",
+		image: "/images/models/wyoming.webp",
 		href: "/modele/wyoming",
 	},
 	{
 		name: "Model OKLAHOMA",
-		image: "/images/models/oklahoma.png",
+		image: "/images/models/oklahoma.webp",
 		href: "/modele/oklahoma",
 	},
 	{
 		name: "Model IDAHO",
-		image: "/images/models/idaho.png",
+		image: "/images/models/idaho.webp",
 		href: "/modele/idaho",
 	},
 	{
 		name: "Model UTAH",
-		image: "/images/models/utah.png",
+		image: "/images/models/utah.webp",
 		href: "/modele/utah",
 	},
 ];
