@@ -32,7 +32,7 @@ const models: ModelItem[] = [
 
 export default function Models() {
 	return (
-		<section className="py-20 md:py-24">
+		<section className="py-20 md:py-24" id="models">
 			<div className="mx-auto max-w-[1400px] px-6 md:px-8">
 				<div className="mb-14 md:mb-16">
 					<h2 className="text-center text-4xl font-normal tracking-[-0.03em] text-black md:text-5xl lg:text-6xl">
@@ -43,7 +43,7 @@ export default function Models() {
 					{models.map((model, index) => (
 						<Link
 							key={model.name}
-							href={model.href}
+							href={model.href + "?from=home"}
 							className={`group block ${index === 3 ? "hidden lg:block" : ""}`}
 						>
 							<article className="flex flex-col items-start">
@@ -63,7 +63,7 @@ export default function Models() {
 				</div>
 				<div className="mt-16 flex justify-center">
 					<Link
-						href="/modele"
+						href="/models"
 						className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-[#ef9228] px-8 text-[15px] font-medium text-black transition-colors duration-300 hover:bg-[#ef9228] hover:text-white md:min-h-[56px] md:px-12 md:text-[18px]"
 					>
 						Zobacz Wszystkie Modele

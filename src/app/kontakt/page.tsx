@@ -125,7 +125,7 @@ export default async function ContactPage({
 										name="email"
 										type="email"
 										required
-										placeholder="kontakt@twojadomena.pl"
+										placeholder="kontakt@email.pl"
 										className="h-[56px] w-full rounded-full border border-black/10 bg-[#fafafa] px-5 text-[15px] outline-none transition focus:border-[#ef9228]"
 									/>
 								</div>

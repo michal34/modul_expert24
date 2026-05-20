@@ -1,4 +1,5 @@
 import Header from "@/components/sections/Header";
+import ScrollToSection from "@/components/ScrollToSection";
 import Hero from "@/components/Hero";
 import Benefits from "@/components/sections/Benefits";
 import Models from "@/components/Models";
@@ -110,6 +111,7 @@ export default function HomePage() {
 			/>
 			<Header />
 			<main>
+				<ScrollToSection />
 				<Hero />
 				<Benefits />
 				<Models />
