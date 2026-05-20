@@ -32,7 +32,7 @@ const models: ModelItem[] = [
 
 export default function Models() {
 	return (
-		<section className="py-20 md:py-24" id="models">
+		<section className="py-20 md:py-24" id="modele">
 			<div className="mx-auto max-w-[1400px] px-6 md:px-8">
 				<div className="mb-14 md:mb-16">
 					<h2 className="text-center text-4xl font-normal tracking-[-0.03em] text-black md:text-5xl lg:text-6xl">
