@@ -39,44 +39,40 @@ export default function ModelsPage() {
 					>
 						Wybierz model
 						<br />
-						dopasowany do Twojego biznesu
+						dopasowany do Twojej potrzeby
 					</h1>
 
 					<p className="mt-8 max-w-3xl text-xl leading-9 text-neutral-600">
-						Pawilony handlowe, usługowe i biurowe w nowoczesnym wydaniu. Każdy model można
-						indywidualnie skonfigurować pod względem wymiarów, elewacji, układu okien oraz
+						Pawilony mieszkalne, handlowe, usługowe i biurowe w nowoczesnym wydaniu. Każdy model
+						można indywidualnie skonfigurować pod względem wymiarów, elewacji, układu okien oraz
 						wyposażenia.
 					</p>
 				</section>
 
 				<section className={infoStyles.modelsGrid}>
-  {models.map((model) => (
-    <Link
-      key={model.slug}
-      href={`/modele/${model.slug}`}
-      className={infoStyles.modelCard}
-    >
-      <div className={infoStyles.modelImageBox}>
-        <Image
-          src={model.thumbnail}
-          alt={`Model ${model.name} - pawilon modułowy`}
-          width={700}
-          height={450}
-          unoptimized
-          className={infoStyles.modelImage}
-        />
-      </div>
+					{models.map((model) => (
+						<Link key={model.slug} href={`/modele/${model.slug}`} className={infoStyles.modelCard}>
+							<div className={infoStyles.modelImageBox}>
+								<Image
+									src={model.thumbnail}
+									alt={`Model ${model.name} - pawilon modułowy`}
+									width={700}
+									height={450}
+									unoptimized
+									className={infoStyles.modelImage}
+								/>
+							</div>
 
-      <div className={infoStyles.modelContent}>
-        <h2>Model {model.name}</h2>
+							<div className={infoStyles.modelContent}>
+								<h2>Model {model.name}</h2>
 
-        <p>{model.description}</p>
+								<p>{model.description}</p>
 
-        <span>Zobacz szczegóły →</span>
-      </div>
-    </Link>
-  ))}
-</section>
+								<span>Zobacz szczegóły →</span>
+							</div>
+						</Link>
+					))}
+				</section>
 
 				<section className={infoStyles.section}>
 					<div className={infoStyles.box}>
