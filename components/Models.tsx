@@ -63,7 +63,7 @@ export default function Models() {
 				</div>
 				<div className="mt-16 flex justify-center">
 					<Link
-						href="/models"
+						href="/modele"
 						className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-[#ef9228] px-8 text-[15px] font-medium text-black transition-colors duration-300 hover:bg-[#ef9228] hover:text-white md:min-h-[56px] md:px-12 md:text-[18px]"
 					>
 						Zobacz Wszystkie Modele

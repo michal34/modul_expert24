@@ -8,7 +8,7 @@ import { useState } from "react";
 const navLinks = [
 	// { label: "Oferta", href: "#oferta" },
 	// { label: "Realizacja", href: "#realizacja" },
-	// { label: "Nasze Modele", href: "#modele" },
+	{ label: "Nasze Modele", href: "/modele" },
 	// { label: "Dlaczego my?", href: "#dlaczego-my" },
 	{ label: "Kontakt", href: "/kontakt" },
 ];

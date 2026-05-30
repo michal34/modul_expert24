@@ -3,10 +3,14 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
-export default function BackButton() {
+type BackButtonProps = {
+	redirect: string;
+};
+
+export default function BackButton({ redirect }: BackButtonProps) {
 	return (
 		<Link
-			href="/?scrollTo=modele"
+			href={redirect}
 			aria-label="Powrót"
 			className="
         group

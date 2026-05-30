@@ -2,6 +2,7 @@ export type Model = {
 	slug: string;
 	name: string;
 	image: string;
+	thumbnail: string;
 	title: string;
 	description: string;
 	features: string[];
@@ -13,6 +14,7 @@ export const models: Model[] = [
 		slug: "alaska",
 		name: "ALASKA",
 		image: "/images/described_models/ALASKA.webp",
+		thumbnail: "/images/models/alaska.webp",
 		title: "Pawilon modułowy ALASKA",
 		description:
 			"Model ALASKA to nowoczesny pawilon modułowy z frontem off-white i grafitową attyką.",
@@ -39,6 +41,7 @@ export const models: Model[] = [
 		slug: "aspen",
 		name: "ASPEN",
 		image: "/images/described_models/ASPEN.webp",
+		thumbnail: "/images/models/aspen.webp",
 		title: "Pawilon modułowy ASPEN",
 		description: "Model ASPEN z nowoczesną elewacją silver grey i antracytową attyką.",
 		features: [
@@ -64,6 +67,7 @@ export const models: Model[] = [
 		slug: "dakota",
 		name: "DAKOTA",
 		image: "/images/described_models/DAKOTA.webp",
+		thumbnail: "/images/models/dakota.webp",
 		title: "Pawilon modułowy DAKOTA",
 		description: "Model DAKOTA z attyką w kolorze dąb złoty i elewacją silver grey.",
 		features: [
@@ -89,6 +93,7 @@ export const models: Model[] = [
 		slug: "denver",
 		name: "DENVER",
 		image: "/images/described_models/DENVER.webp",
+		thumbnail: "/images/models/denver.webp",
 		title: "Pawilon modułowy DENVER",
 		description: "Model DENVER z drewnianą elewacją w kolorze orzech.",
 		features: [
@@ -114,6 +119,7 @@ export const models: Model[] = [
 		slug: "idaho",
 		name: "IDAHO",
 		image: "/images/described_models/IDAHO.webp",
+		thumbnail: "/images/models/idaho.webp",
 		title: "Pawilon modułowy IDAHO",
 		description: "Model IDAHO z elewacją silver grey i antracytową attyką.",
 		features: [
@@ -139,6 +145,7 @@ export const models: Model[] = [
 		slug: "oklahoma",
 		name: "OKLAHOMA",
 		image: "/images/described_models/OKLAHOMA.webp",
+		thumbnail: "/images/models/oklahoma.webp",
 		title: "Pawilon modułowy OKLAHOMA",
 		description: "Model OKLAHOMA z elewacją orzech i dużymi przeszkleniami.",
 		features: [
@@ -164,6 +171,7 @@ export const models: Model[] = [
 		slug: "utah",
 		name: "UTAH",
 		image: "/images/described_models/UTAH.webp",
+		thumbnail: "/images/models/utah.webp",
 		title: "Pawilon modułowy UTAH",
 		description: "Model UTAH z frontem light grey i grafitową attyką.",
 		features: [
@@ -189,6 +197,7 @@ export const models: Model[] = [
 		slug: "wyoming",
 		name: "WYOMING",
 		image: "/images/described_models/WYOMING.webp",
+		thumbnail: "/images/models/wyoming.webp",
 		title: "Pawilon modułowy WYOMING",
 		description: "Model WYOMING z elewacją w kolorze orzech i białym frontem.",
 		features: [

@@ -118,7 +118,11 @@ export default async function ModelPage({ params, searchParams }: Props) {
 			<Header />
 
 			<main className={styles.page}>
-				{showBackButton && <BackButton />}
+				{showBackButton ? (
+					<BackButton redirect={"/?scrollTo=modele"} />
+				) : (
+					<BackButton redirect={"/modele"} />
+				)}
 
 				<script
 					type="application/ld+json"

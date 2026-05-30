@@ -40,7 +40,7 @@ export default function Footer() {
                 <Link href="/realizacje" className="hover:opacity-70">
                   Realizacje
                 </Link>
-              </li>
+              </li> */}
 
               <li>
                 <Link href="/modele" className="hover:opacity-70">
@@ -48,7 +48,7 @@ export default function Footer() {
                 </Link>
               </li>
 
-              <li>
+              {/* <li>
                 <Link href="/dlaczego-my" className="hover:opacity-70">
                   Dlaczego my?
                 </Link>
