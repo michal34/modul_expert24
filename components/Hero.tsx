@@ -10,7 +10,7 @@ export default function Hero() {
 					fill
 					priority
 					fetchPriority="high"
-					quality={75}
+					quality={60}
 					sizes="100vw"
 					placeholder="blur"
 					blurDataURL="data:image/webp;base64,UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AA/vuUAAA="
