@@ -54,6 +54,7 @@ export default function Models() {
 										src={model.image}
 										alt={model.name}
 										fill
+										sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
 										className="object-contain transition-transform duration-300 group-hover:scale-110"
 									/>
 								</div>
