@@ -42,13 +42,13 @@ export default function Footer() {
                 </Link>
               </li> */}
 
-              <li>
-                <Link href="/modele" className="hover:opacity-70">
-                  Nasze Modele
-                </Link>
-              </li>
+							<li>
+								<Link href="/modele" className="hover:opacity-70">
+									Nasze Modele
+								</Link>
+							</li>
 
-              {/* <li>
+							{/* <li>
                 <Link href="/dlaczego-my" className="hover:opacity-70">
                   Dlaczego my?
                 </Link>
@@ -72,9 +72,9 @@ export default function Footer() {
 							<li className="flex items-start gap-3">
 								<MapPin className="mt-[3px] h-5 w-5 text-[#ef9228]" />
 								<address className="not-italic leading-[1.6]">
-									Rudzka 13
+									05-311
 									<br />
-									05-311 Choszczówka
+									Choszczówka Rudzka 13
 									<br />
 									Polska
 								</address>
