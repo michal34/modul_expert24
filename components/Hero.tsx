@@ -9,7 +9,11 @@ export default function Hero() {
 					alt="Nowoczesny dom modułowy"
 					fill
 					priority
+					fetchPriority="high"
+					quality={75}
 					sizes="100vw"
+					placeholder="blur"
+					blurDataURL="data:image/webp;base64,UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AA/vuUAAA="
 					className="object-cover object-[64%_center] sm:object-[60%_center] md:object-center"
 				/>
 
