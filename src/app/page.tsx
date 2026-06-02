@@ -17,11 +17,11 @@ import Footer from "@/components/sections/Footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title: "Domy modułowe i pawilony modułowe Mazowieckie",
+	title: "Moduł Expert 24 – Domy modułowe i pawilony handlowe | Mazowieckie",
 	description:
 		"Producent domów modułowych i pawilonów modułowych na terenie Mazowieckiego. Warszawa, Mińsk Mazowiecki i okolice. Sprawdź ofertę i realizacje.",
 	alternates: {
-		canonical: "https://modulexpert24.pl",
+		canonical: "https://www.modulexpert24.pl",
 	},
 };
 
@@ -29,24 +29,32 @@ const localBusinessSchema = {
 	"@context": "https://schema.org",
 	"@type": "HomeAndConstructionBusiness",
 	name: "Moduł Expert24",
-	image: "https://modulexpert24.pl/og-image.jpg",
-	url: "https://modulexpert24.pl",
+	image: "https://www.modulexpert24.pl/og-image.jpg",
+	url: "https://www.modulexpert24.pl",
 	telephone: "+48575203444",
 	address: {
 		"@type": "PostalAddress",
 		streetAddress: "Choszczówka Rudzka 13",
 		postalCode: "05-311",
-		addressLocality: "Dębe Wielkie",
+		addressLocality: "Choszczówka Rudzka",
 		addressCountry: "PL",
 	},
 	areaServed: [
+		{
+			"@type": "City",
+			name: "Mińsk Mazowiecki",
+		},
 		{
 			"@type": "City",
 			name: "Warszawa",
 		},
 		{
 			"@type": "City",
-			name: "Mińsk Mazowiecki",
+			name: "Sulejówek",
+		},
+		{
+			"@type": "City",
+			name: "Halinów",
 		},
 		{
 			"@type": "AdministrativeArea",
@@ -75,7 +83,7 @@ const serviceSchema = {
 	provider: {
 		"@type": "LocalBusiness",
 		name: "Moduł Expert24",
-		url: "https://modulexpert24.pl",
+		url: "https://www.modulexpert24.pl",
 	},
 	areaServed: [
 		{
@@ -92,7 +100,7 @@ const serviceSchema = {
 		},
 	],
 	serviceType: ["Domy modułowe", "Pawilony modułowe", "Domki całoroczne"],
-	url: "https://modulexpert24.pl",
+	url: "https://www.modulexpert24.pl",
 };
 
 export default function HomePage() {

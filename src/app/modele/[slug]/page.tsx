@@ -20,7 +20,7 @@ type Props = {
 	}>;
 };
 
-const SITE_URL = "https://modulexpert24.pl";
+const SITE_URL = "https://www.modulexpert24.pl";
 
 export async function generateStaticParams(): Promise<Array<{ slug: string }>> {
 	return models.map((model: Model) => ({

@@ -1,0 +1,392 @@
+.aboutPage {
+	background: #ffffff;
+	color: #13272f;
+}
+
+.aboutContainer {
+	width: min(1160px, calc(100% - 40px));
+	margin: 0 auto;
+}
+
+.aboutHero {
+	padding: 74px 0 70px;
+	background:
+		radial-gradient(circle at 75% 20%, rgba(244, 162, 97, 0.13), transparent 30%),
+		linear-gradient(135deg, #1f4a57 0%, #173944 55%, #10252d 100%);
+	color: white;
+}
+
+.aboutHeroGrid {
+	display: grid;
+	grid-template-columns: 1.25fr 0.75fr;
+	gap: 64px;
+	align-items: center;
+}
+
+.aboutEyebrow {
+	margin: 0 0 14px;
+	font-size: 13px;
+	font-weight: 800;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: #f4a261;
+}
+
+.aboutHero h1 {
+	margin: 0;
+	font-size: clamp(42px, 5vw, 64px);
+	font-weight: 500;
+	line-height: 1.05;
+	letter-spacing: -0.04em;
+	color: white;
+}
+
+.aboutLead {
+	margin: 24px 0 0;
+	max-width: 760px;
+	font-size: clamp(23px, 2.25vw, 34px);
+	font-weight: 500;
+	line-height: 1.35;
+	color: white;
+}
+
+.aboutHeroText {
+	margin: 24px 0 0;
+	max-width: 720px;
+	font-size: 18px;
+	line-height: 1.8;
+	color: rgba(255, 255, 255, 0.84);
+}
+
+.aboutHeroActions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 14px;
+	margin-top: 34px;
+}
+
+.aboutButtonPrimary,
+.aboutButtonSecondary {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 50px;
+	padding: 0 22px;
+	border-radius: 14px;
+	font-size: 15px;
+	font-weight: 700;
+	text-decoration: none;
+	transition: 0.2s ease;
+}
+
+.aboutButtonPrimary {
+	background: #f4a261;
+	color: #10252d;
+}
+
+.aboutButtonPrimary:hover {
+	background: #ffb574;
+	transform: translateY(-2px);
+}
+
+.aboutButtonSecondary {
+	border: 1px solid rgba(255, 255, 255, 0.28);
+	color: white;
+}
+
+.aboutButtonSecondary:hover {
+	background: white;
+	color: #1f4a57;
+	transform: translateY(-2px);
+}
+
+.aboutStats {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 14px;
+	margin-top: 38px;
+}
+
+.aboutStats div {
+	padding: 14px 18px;
+	border-radius: 16px;
+	background: rgba(255, 255, 255, 0.08);
+	border: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.aboutStats strong {
+	display: block;
+	font-size: 15px;
+	font-weight: 700;
+	color: white;
+}
+
+.aboutStats span {
+	display: block;
+	margin-top: 4px;
+	font-size: 13px;
+	color: rgba(255, 255, 255, 0.68);
+}
+
+.aboutHeroCard {
+	padding: 30px;
+	border-radius: 26px;
+	background: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22);
+	backdrop-filter: blur(10px);
+}
+
+.aboutHeroCardLabel {
+	margin: 0 0 12px;
+	font-size: 13px;
+	font-weight: 800;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: #f4a261;
+}
+
+.aboutHeroCard h2 {
+	margin: 0;
+	font-size: 26px;
+	font-weight: 600;
+	line-height: 1.25;
+	color: white;
+}
+
+.aboutHeroCard ul {
+	margin: 24px 0 0;
+	padding: 0;
+	list-style: none;
+	display: grid;
+	gap: 12px;
+}
+
+.aboutHeroCard li {
+	position: relative;
+	padding-left: 24px;
+	font-size: 16px;
+	line-height: 1.6;
+	color: rgba(255, 255, 255, 0.86);
+}
+
+.aboutHeroCard li::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 10px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: #f4a261;
+}
+
+.aboutSection {
+	padding: 86px 0;
+	background: white;
+}
+
+.aboutSectionHeader {
+	max-width: 760px;
+	margin-bottom: 42px;
+}
+
+.aboutSectionHeader h2,
+.aboutTwoColumns h2,
+.aboutCta h2 {
+	margin: 0;
+	font-size: clamp(32px, 4vw, 46px);
+	font-weight: 600;
+	line-height: 1.12;
+	letter-spacing: -0.03em;
+	color: #13272f;
+}
+
+.aboutSectionHeader p,
+.aboutTwoColumns p,
+.aboutCta p {
+	margin: 18px 0 0;
+	font-size: 18px;
+	line-height: 1.8;
+	color: #53646b;
+}
+
+.aboutCards {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 22px;
+}
+
+.aboutCard {
+	padding: 30px;
+	border-radius: 24px;
+	background: #f6f8f8;
+	border: 1px solid #e8eeee;
+	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+}
+
+.aboutCard h3 {
+	margin: 0 0 12px;
+	font-size: 22px;
+	font-weight: 600;
+	color: #1f4a57;
+}
+
+.aboutCard p {
+	margin: 0;
+	font-size: 16px;
+	line-height: 1.75;
+	color: #53646b;
+}
+
+.aboutDarkSection {
+	padding: 86px 0;
+	background: #13272f;
+	color: white;
+}
+
+.aboutDarkSection h2 {
+	color: white;
+}
+
+.aboutDarkSection p {
+	color: rgba(255, 255, 255, 0.78);
+}
+
+.aboutTwoColumns {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 60px;
+	align-items: center;
+}
+
+.aboutSteps {
+	display: grid;
+	gap: 16px;
+}
+
+.aboutSteps div {
+	display: grid;
+	grid-template-columns: 54px 1fr;
+	gap: 18px;
+	align-items: center;
+	padding: 18px;
+	border-radius: 18px;
+	background: rgba(255, 255, 255, 0.08);
+	border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.aboutSteps span {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 44px;
+	height: 44px;
+	border-radius: 14px;
+	background: #f4a261;
+	color: #13272f;
+	font-weight: 800;
+}
+
+.aboutSteps p {
+	margin: 0;
+	font-size: 16px;
+	font-weight: 600;
+	color: white;
+}
+
+.aboutLocationBox {
+	padding: 32px;
+	border-radius: 26px;
+	background: #f6f8f8;
+	border: 1px solid #e8eeee;
+}
+
+.aboutLocationBox h3 {
+	margin: 0 0 18px;
+	font-size: 24px;
+	font-weight: 600;
+	color: #1f4a57;
+}
+
+.aboutLocationBox ul {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 12px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.aboutLocationBox li {
+	padding: 14px 16px;
+	border-radius: 14px;
+	background: white;
+	color: #13272f;
+	font-weight: 600;
+	border: 1px solid #e8eeee;
+}
+
+.aboutCta {
+	padding: 86px 0;
+	background: linear-gradient(135deg, #f6f8f8, #eef4f5);
+	text-align: center;
+}
+
+.aboutCta .aboutContainer {
+	max-width: 840px;
+}
+
+.aboutCta .aboutButtonPrimary {
+	margin-top: 28px;
+}
+
+@media (max-width: 900px) {
+	.aboutHeroGrid,
+	.aboutTwoColumns {
+		grid-template-columns: 1fr;
+	}
+
+	.aboutCards {
+		grid-template-columns: 1fr;
+	}
+
+	.aboutHero {
+		padding: 64px 0;
+	}
+
+	.aboutSection,
+	.aboutDarkSection,
+	.aboutCta {
+		padding: 64px 0;
+	}
+}
+
+@media (max-width: 560px) {
+	.aboutContainer {
+		width: min(100% - 28px, 1160px);
+	}
+
+	.aboutHeroActions {
+		flex-direction: column;
+	}
+
+	.aboutButtonPrimary,
+	.aboutButtonSecondary {
+		width: 100%;
+	}
+
+	.aboutStats {
+		flex-direction: column;
+	}
+
+	.aboutLocationBox ul {
+		grid-template-columns: 1fr;
+	}
+
+	.aboutHeroCard,
+	.aboutCard,
+	.aboutLocationBox {
+		padding: 24px;
+	}
+}
