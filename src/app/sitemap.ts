@@ -22,6 +22,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			changeFrequency: "weekly",
 			priority: 0.9,
 		},
+		{
+			url: `${base}/domy-modulowe-minsk-mazowiecki`,
+			lastModified: new Date(),
+			changeFrequency: "monthly",
+			priority: 0.8,
+		},
 		// {
 		// 	url: `${base}/realizacje`,
 		// 	lastModified: new Date(),

@@ -5,8 +5,8 @@ import { Mail, Phone, MapPin } from "lucide-react";
 export default function Footer() {
 	return (
 		<footer className="border-t border-black/10 bg-white pt-14 pb-8">
-			<div className="mx-auto max-w-[1400px] px-4 md:px-6 lg:px-8">
-				<div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_1fr_1.4fr] lg:gap-16">
+			<div className="mx-auto max-w-[1500px] px-4 md:px-6 lg:px-8">
+				<div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_1.1fr_1fr_1.4fr] lg:gap-14">
 					<div>
 						<Link href="/" aria-label="Strona główna Moduł Expert 24">
 							<Image
@@ -22,8 +22,8 @@ export default function Footer() {
 
 						<p className="mt-5 max-w-[320px] text-[15px] leading-7 text-black/70">
 							Moduł Expert 24 projektuje i realizuje domy modułowe, domy kontenerowe oraz pawilony
-							handlowe dla klientów z Mazowsza, w szczególności z okolic Warszawy i Mińska
-							Mazowieckiego.
+							handlowe dla klientów z Mazowsza, w szczególności z okolic Mińska Mazowieckiego i
+							Warszawy.
 						</p>
 					</div>
 
@@ -37,15 +37,37 @@ export default function Footer() {
 									Nasze modele
 								</Link>
 							</li>
+
 							<li>
 								<Link href="/o-nas" className="transition hover:text-[#ef9228]">
 									O firmie
 								</Link>
 							</li>
+
 							<li>
 								<Link href="/kontakt" className="transition hover:text-[#ef9228]">
 									Kontakt
 								</Link>
+							</li>
+						</ul>
+					</div>
+
+					<div>
+						<h3 className="text-[18px] font-semibold text-black">Obszar działania</h3>
+						<div className="mt-3 h-[2px] w-[120px] bg-[#ef9228]" />
+
+						<ul className="mt-5 space-y-3 text-[15px] text-black/75">
+							<li>
+								<Link
+									href="/domy-modulowe-minsk-mazowiecki"
+									className="transition hover:text-[#ef9228]"
+								>
+									Domy modułowe Mińsk Mazowiecki
+								</Link>
+							</li>
+
+							<li>
+								<span className="text-black/55">Obsługujemy również Warszawę i okolice</span>
 							</li>
 						</ul>
 					</div>
@@ -85,7 +107,7 @@ export default function Footer() {
 					<div className="overflow-hidden rounded-2xl border border-black/10 shadow-sm">
 						<iframe
 							title="Mapa dojazdu - Moduł Expert 24, Choszczówka Rudzka 13"
-							src="https://www.google.com/maps?q=Choszcz%C3%B3wka%20Rudzka%2013%2C%2005-311%20Polska&z=16&output=embed"
+							src="https://www.google.com/maps?q=Choszcz%C3%B3wka%20Rudzka%2013%2C%2005-311%20Choszcz%C3%B3wka%20Rudzka%2C%20Polska&z=16&output=embed"
 							width="100%"
 							height="300"
 							style={{ border: 0 }}
@@ -99,6 +121,11 @@ export default function Footer() {
 				<div className="mt-12 border-t border-black/10 pt-6 text-center text-[14px] text-black/55">
 					© {new Date().getFullYear()} Moduł Expert 24. Wszelkie prawa zastrzeżone.
 				</div>
+
+				<p className="mt-2 text-center text-[13px] text-black/45">
+					Domy modułowe • Pawilony handlowe • Domy kontenerowe • Mińsk Mazowiecki • Warszawa •
+					Mazowieckie
+				</p>
 			</div>
 		</footer>
 	);
