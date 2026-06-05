@@ -10,6 +10,7 @@ import WhyDetails from "@/components/sections/WhyDetails";
 import UseCases from "@/components/sections/UseCases";
 import InteriorFeatures from "@/components/sections/InteriorFeatures";
 import PricingForm from "@/components/sections/PricingForm";
+import Faq from "@/components/sections/Faq";
 import Process from "@/components/sections/Process";
 import Gallery from "@/components/Gallery";
 import FinalCta from "@/components/sections/FinalCta";
@@ -101,6 +102,69 @@ const serviceSchema = {
 	url: "https://www.modulexpert24.pl",
 };
 
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	mainEntity: [
+		{
+			"@type": "Question",
+			name: "Ile kosztuje dom modułowy?",
+			acceptedAnswer: {
+				"@type": "Answer",
+				text: "Cena zależy od powierzchni, standardu wykończenia, wyposażenia oraz indywidualnych wymagań projektu. Każdą wycenę przygotowujemy indywidualnie.",
+			},
+		},
+		{
+			"@type": "Question",
+			name: "Jak długo trwa realizacja domu modułowego?",
+			acceptedAnswer: {
+				"@type": "Answer",
+				text: "Czas realizacji zależy od wybranego modelu, zakresu prac oraz aktualnego harmonogramu produkcji. Budownictwo modułowe pozwala skrócić czas realizacji względem tradycyjnej budowy.",
+			},
+		},
+		{
+			"@type": "Question",
+			name: "Czy dom modułowy może być użytkowany przez cały rok?",
+			acceptedAnswer: {
+				"@type": "Answer",
+				text: "Tak. Wykonujemy domy modułowe całoroczne z odpowiednią izolacją oraz instalacjami dostosowanymi do użytkowania przez cały rok.",
+			},
+		},
+		{
+			"@type": "Question",
+			name: "Czy wykonujecie transport i montaż?",
+			acceptedAnswer: {
+				"@type": "Answer",
+				text: "Tak. Zapewniamy transport oraz montaż obiektów modułowych na terenie województwa mazowieckiego i innych regionów Polski.",
+			},
+		},
+		{
+			"@type": "Question",
+			name: "Czy realizujecie zamówienia w Warszawie i Mińsku Mazowieckim?",
+			acceptedAnswer: {
+				"@type": "Answer",
+				text: "Tak. Obsługujemy klientów z Mińska Mazowieckiego, Warszawy, Sulejówka, Halinowa, Choszczówki Rudzkiej oraz innych miejscowości województwa mazowieckieg a nawet całej Polski.",
+			},
+		},
+		{
+			"@type": "Question",
+			name: "Czy pawilon handlowy wymaga pozwolenia na budowę?",
+			acceptedAnswer: {
+				"@type": "Answer",
+				text: "Wymagania formalne zależą od rodzaju obiektu, jego powierzchni oraz sposobu użytkowania. W razie potrzeby pomagamy klientom uzyskać podstawowe informacje dotyczące formalności.",
+			},
+		},
+		{
+			"@type": "Question",
+			name: "Czy można zmodyfikować gotowy projekt?",
+			acceptedAnswer: {
+				"@type": "Answer",
+				text: "Tak. Oferujemy możliwość dostosowania układu pomieszczeń, wykończenia oraz wyposażenia do indywidualnych potrzeb klienta.",
+			},
+		},
+	],
+};
+
 export default function HomePage() {
 	return (
 		<>
@@ -116,6 +180,12 @@ export default function HomePage() {
 					__html: JSON.stringify(serviceSchema),
 				}}
 			/>
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{
+					__html: JSON.stringify(faqSchema),
+				}}
+			/>
 			<Header />
 			<main>
 				<Suspense fallback={null}>
@@ -129,8 +199,9 @@ export default function HomePage() {
 				<WhyDetails />
 				<UseCases />
 				<InteriorFeatures />
-				<PricingForm />
 				<Process />
+				<Faq />
+				<PricingForm />
 				{/* <Gallery /> */}
 				<FinalCta />
 			</main>
