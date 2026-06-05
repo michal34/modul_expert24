@@ -108,7 +108,7 @@ export default async function ModelPage({ params, searchParams }: Props) {
 				"@type": "ListItem",
 				position: 3,
 				name: `Model ${model.name}`,
-				item: `${SITE_URL}/models/${model.slug}`,
+				item: `${SITE_URL}/modele/${model.slug}`,
 			},
 		],
 	};

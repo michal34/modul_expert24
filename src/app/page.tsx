@@ -80,9 +80,18 @@ const serviceSchema = {
 	description:
 		"Projektowanie, produkcja i sprzedaż domów modułowych oraz pawilonów modułowych na terenie województwa mazowieckiego, w tym Warszawy i Mińska Mazowieckiego.",
 	provider: {
-		"@type": "LocalBusiness",
-		name: "Moduł Expert24",
+		"@type": "HomeAndConstructionBusiness",
+		name: "Moduł Expert 24",
 		url: "https://www.modulexpert24.pl",
+		image: "https://www.modulexpert24.pl/og-image.jpg",
+		telephone: "+48575203444",
+		address: {
+			"@type": "PostalAddress",
+			streetAddress: "Choszczówka Rudzka 13",
+			postalCode: "05-311",
+			addressLocality: "Choszczówka Rudzka",
+			addressCountry: "PL",
+		},
 	},
 	areaServed: [
 		{

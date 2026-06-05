@@ -67,7 +67,7 @@ export default function AboutPage() {
 							</p>
 
 							<p className="aboutHeroText">
-								Jesteśmy firmą z Mińsk Mazowieckiego. Obsługujemy głównie okolice Mińska
+								Jesteśmy firmą z okolic Mińsk Mazowieckiego. Obsługujemy głównie okolice Mińska
 								Mazowieckiego, Warszawy, Sulejówka, Halinowa oraz całe województwo mazowieckie.
 							</p>
 
