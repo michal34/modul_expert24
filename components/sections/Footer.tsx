@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
-
+import { FaFacebookF } from "react-icons/fa";
 export default function Footer() {
 	return (
 		<footer className="border-t border-black/10 bg-white pt-14 pb-8">
@@ -76,15 +76,13 @@ export default function Footer() {
 						<h3 className="text-[18px] font-semibold text-black">Kontakt</h3>
 						<div className="mt-3 h-[2px] w-[80px] bg-[#ef9228]" />
 
-						<ul className="mt-5 space-y-4 text-[15px] text-black/75">
+						<ul className="mt-5 space-y-4 text-[15px] leading-7 text-black/75">
 							<li className="flex items-start gap-3">
 								<MapPin className="mt-[3px] h-5 w-5 shrink-0 text-[#ef9228]" />
 								<address className="not-italic leading-7">
 									Choszczówka Rudzka 13
 									<br />
 									05-311 Choszczówka Rudzka
-									<br />
-									Polska
 								</address>
 							</li>
 
@@ -99,6 +97,18 @@ export default function Footer() {
 								<Phone className="h-5 w-5 shrink-0 text-[#ef9228]" />
 								<a href="tel:+48575203444" className="transition hover:text-[#ef9228]">
 									+48 575 203 444
+								</a>
+							</li>
+							<li className="flex items-center gap-3 text-[14px]">
+								<FaFacebookF className="h-5 w-5 shrink-0 text-[#ef9228]" />
+
+								<a
+									href="https://www.facebook.com/profile.php?id=61590299923979"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="transition hover:text-[#ef9228]"
+								>
+									ModułExpert24 na Facebook
 								</a>
 							</li>
 						</ul>

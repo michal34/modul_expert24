@@ -17,7 +17,7 @@ import Footer from "@/components/sections/Footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title: "Moduł Expert 24 – Domy modułowe i pawilony handlowe | Mazowieckie",
+	title: "Moduł Expert24 – Domy modułowe i pawilony handlowe | Mazowieckie",
 	description:
 		"Producent domów modułowych i pawilonów modułowych na terenie Mazowieckiego. Warszawa, Mińsk Mazowiecki i okolice. Sprawdź ofertę i realizacje.",
 	alternates: {
@@ -69,9 +69,7 @@ const localBusinessSchema = {
 			closes: "17:00",
 		},
 	],
-	sameAs: [
-		// "https://www.facebook.com/twojprofil", "https://www.instagram.com/twojprofil"
-	],
+	sameAs: ["https://www.facebook.com/profile.php?id=61590299923979"],
 };
 
 const serviceSchema = {
