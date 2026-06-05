@@ -200,8 +200,8 @@ export default function HomePage() {
 				<UseCases />
 				<InteriorFeatures />
 				<Process />
-				<Faq />
 				<PricingForm />
+				<Faq />
 				{/* <Gallery /> */}
 				<FinalCta />
 			</main>
