@@ -8,7 +8,7 @@ import { models } from "@/src/data/models";
 
 import infoStyles from "./models-info.module.css";
 
-const SITE_URL = "https://www.modulexpert24.pl/";
+const SITE_URL = "https://www.modulexpert24.pl";
 
 export const metadata: Metadata = {
 	title: "Modele pawilonów modułowych | Moduł Expert24",
@@ -83,6 +83,14 @@ export default function ModelsPage() {
 						<p className={infoStyles.text}>
 							Pawilony modułowe Moduł Expert24 to nowoczesne rozwiązanie dla firm poszukujących
 							funkcjonalnej, estetycznej i trwałej przestrzeni użytkowej.
+						</p>
+
+						<p className={infoStyles.text}>
+							Interesuje Cię obiekt mieszkalny na Mazowszu? Zobacz naszą ofertę{" "}
+							<Link href="/domy-modulowe-minsk-mazowiecki">
+								domów i domków modułowych w Mińsku Mazowieckim
+							</Link>
+							.
 						</p>
 
 						<div className={infoStyles.grid}>

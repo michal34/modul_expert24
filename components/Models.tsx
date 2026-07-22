@@ -70,6 +70,16 @@ export default function Models() {
 						Zobacz Wszystkie Modele
 					</Link>
 				</div>
+				<p className="mx-auto mt-6 max-w-2xl text-center text-[15px] leading-7 text-black/65 md:text-[16px]">
+					Planujesz inwestycję w okolicy? Sprawdź{" "}
+					<Link
+						href="/domy-modulowe-minsk-mazowiecki"
+						className="font-semibold text-[#c66c0d] underline-offset-4 hover:underline"
+					>
+						domy i domki modułowe w Mińsku Mazowieckim
+					</Link>
+					.
+				</p>
 			</div>
 		</section>
 	);

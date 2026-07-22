@@ -30,7 +30,7 @@ const localBusinessSchema = {
 	"@context": "https://schema.org",
 	"@type": "HomeAndConstructionBusiness",
 	name: "Moduł Expert24",
-	image: "https://www.modulexpert24.pl/og-image.jpg",
+	image: "https://www.modulexpert24.pl/images/hero.webp",
 	url: "https://www.modulexpert24.pl",
 	telephone: "+48575203444",
 	address: {
@@ -83,7 +83,7 @@ const serviceSchema = {
 		"@type": "HomeAndConstructionBusiness",
 		name: "Moduł Expert 24",
 		url: "https://www.modulexpert24.pl",
-		image: "https://www.modulexpert24.pl/og-image.jpg",
+		image: "https://www.modulexpert24.pl/images/hero.webp",
 		telephone: "+48575203444",
 		address: {
 			"@type": "PostalAddress",
@@ -152,7 +152,7 @@ const faqSchema = {
 			name: "Czy realizujecie zamówienia w Warszawie i Mińsku Mazowieckim?",
 			acceptedAnswer: {
 				"@type": "Answer",
-				text: "Tak. Obsługujemy klientów z Mińska Mazowieckiego, Warszawy, Sulejówka, Halinowa, Choszczówki Rudzkiej oraz innych miejscowości województwa mazowieckieg a nawet całej Polski.",
+				text: "Tak. Obsługujemy klientów z Mińska Mazowieckiego, Warszawy, Sulejówka, Halinowa, Choszczówki Rudzkiej oraz innych miejscowości województwa mazowieckiego, a nawet całej Polski.",
 			},
 		},
 		{

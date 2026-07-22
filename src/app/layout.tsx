@@ -27,9 +27,9 @@ export const metadata: Metadata = {
 		type: "website",
 		images: [
 			{
-				url: "/og-image.jpg",
-				width: 1200,
-				height: 630,
+				url: "/images/hero.webp",
+				width: 1536,
+				height: 1024,
 				alt: "Domy modułowe i pawilony modułowe – Moduł Expert24",
 			},
 		],
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 		title: "Domy modułowe i pawilony modułowe – Moduł Expert24",
 		description:
 			"Nowoczesne domy modułowe i pawilony modułowe. Szybka realizacja i wysoka jakość wykonania.",
-		images: ["/og-image.jpg"],
+		images: ["/images/hero.webp"],
 	},
 
 	robots: {

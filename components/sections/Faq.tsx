@@ -22,7 +22,7 @@ const faqs = [
 	{
 		question: "Czy realizujecie zamówienia w Warszawie i Mińsku Mazowieckim?",
 		answer:
-			"Tak. Obsługujemy klientów z Mińska Mazowieckiego, Warszawy, Sulejówka, Halinowa, Choszczówki Rudzkiej oraz innych miejscowości województwa mazowieckieg a nawet całej Polski.",
+			"Tak. Obsługujemy klientów z Mińska Mazowieckiego, Warszawy, Sulejówka, Halinowa, Choszczówki Rudzkiej oraz innych miejscowości województwa mazowieckiego, a nawet całej Polski.",
 	},
 	{
 		question: "Czy pawilon handlowy wymaga pozwolenia na budowę?",

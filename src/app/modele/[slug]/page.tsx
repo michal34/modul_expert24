@@ -75,17 +75,24 @@ export default async function ModelPage({ params, searchParams }: Props) {
 
 	const showBackButton = from === "home";
 
-	const productJsonLd = {
+	const serviceJsonLd = {
 		"@context": "https://schema.org",
-		"@type": "Product",
+		"@type": "Service",
 		name: model.title,
 		description: model.description,
 		image: `${SITE_URL}${model.image}`,
 		url: `${SITE_URL}/modele/${model.slug}`,
-		brand: {
-			"@type": "Brand",
+		serviceType: "Projektowanie i wykonanie pawilonu modułowego",
+		provider: {
+			"@type": "HomeAndConstructionBusiness",
 			name: "Moduł Expert24",
+			url: SITE_URL,
+			telephone: "+48575203444",
 		},
+		areaServed: [
+			{ "@type": "AdministrativeArea", name: "Mazowieckie" },
+			{ "@type": "Country", name: "Polska" },
+		],
 	};
 
 	const breadcrumbJsonLd = {
@@ -127,7 +134,7 @@ export default async function ModelPage({ params, searchParams }: Props) {
 				<script
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{
-						__html: JSON.stringify(productJsonLd),
+						__html: JSON.stringify(serviceJsonLd),
 					}}
 				/>
 

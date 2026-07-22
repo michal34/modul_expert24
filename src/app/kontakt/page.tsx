@@ -1,13 +1,19 @@
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { sendContactForm } from "@/src/actions/contact";
 import SubmitButton from "@/components/ui/SubmitButton";
 
-export const metadata = {
-	title: "Kontakt",
+export const metadata: Metadata = {
+	title: {
+		absolute: "Kontakt | Moduł Expert24",
+	},
 	description:
 		"Skontaktuj się z Moduł Expert24. Napisz do nas lub zadzwoń, a przygotujemy ofertę dopasowaną do Twojej inwestycji.",
+	alternates: {
+		canonical: "https://www.modulexpert24.pl/kontakt",
+	},
 };
 
 export default async function ContactPage({
