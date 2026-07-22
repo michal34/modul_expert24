@@ -7,7 +7,9 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const navLinks = [
+	{ label: "Pawilony", href: "/pawilony-handlowe" },
 	{ label: "Nasze modele", href: "/modele" },
+	{ label: "Poradnik", href: "/dom-modulowy-formalnosci" },
 	{ label: "O firmie", href: "/o-nas" },
 	{ label: "Kontakt", href: "/kontakt" },
 ];
@@ -41,7 +43,7 @@ export default function Header() {
 					/>
 				</Link>
 
-				<nav className="hidden items-center gap-12 lg:flex" aria-label="Główna nawigacja">
+				<nav className="hidden items-center gap-8 lg:flex xl:gap-12" aria-label="Główna nawigacja">
 					{navLinks.map((link) => {
 						const active = isActive(link.href);
 

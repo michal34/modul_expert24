@@ -37,6 +37,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			priority: 0.8,
 		},
 		{
+			url: `${BASE_URL}/domy-modulowe-warszawa`,
+			lastModified: LAST_UPDATED,
+			changeFrequency: "monthly",
+			priority: 0.8,
+		},
+		{
+			url: `${BASE_URL}/domy-modulowe-cena`,
+			lastModified: LAST_UPDATED,
+			changeFrequency: "monthly",
+			priority: 0.8,
+		},
+		{
+			url: `${BASE_URL}/pawilony-handlowe`,
+			lastModified: LAST_UPDATED,
+			changeFrequency: "monthly",
+			priority: 0.8,
+		},
+		{
+			url: `${BASE_URL}/kontenery-biurowe`,
+			lastModified: LAST_UPDATED,
+			changeFrequency: "monthly",
+			priority: 0.8,
+		},
+		{
+			url: `${BASE_URL}/dom-modulowy-formalnosci`,
+			lastModified: LAST_UPDATED,
+			changeFrequency: "monthly",
+			priority: 0.7,
+		},
+		{
 			url: `${BASE_URL}/o-nas`,
 			lastModified: LAST_UPDATED,
 			changeFrequency: "yearly",
