@@ -14,43 +14,45 @@ export const metadata: Metadata = {
 	},
 };
 
+const faqItems = [
+	{
+		question: "Czy wykonujecie domy modułowe w Mińsku Mazowieckim?",
+		answer:
+			"Tak. Obsługujemy klientów z Mińska Mazowieckiego oraz okolicznych miejscowości, takich jak Dębe Wielkie, Halinów, Sulejówek, Kałuszyn i Stanisławów.",
+	},
+	{
+		question: "Ile kosztuje dom modułowy?",
+		answer:
+			"Cena domu modułowego zależy od powierzchni, układu pomieszczeń, standardu wykończenia, zastosowanych materiałów oraz zakresu prac. Każdą wycenę przygotowujemy indywidualnie.",
+	},
+	{
+		question: "Czy dom modułowy może być całoroczny?",
+		answer:
+			"Tak. Dom modułowy może zostać przygotowany do użytkowania całorocznego z odpowiednią izolacją, instalacjami, ogrzewaniem i wybranym standardem wykończenia.",
+	},
+	{
+		question: "Jak długo trwa realizacja domu modułowego?",
+		answer:
+			"Czas realizacji zależy od projektu, dostępności materiałów, zakresu prac oraz ustaleń z klientem. Budownictwo modułowe zwykle pozwala skrócić realizację w porównaniu z tradycyjną budową.",
+	},
+	{
+		question: "Czy realizujecie domy modułowe również w Warszawie?",
+		answer:
+			"Tak. Realizujemy projekty w Warszawie, Mińsku Mazowieckim oraz w innych miejscowościach na terenie województwa mazowieckiego.",
+	},
+];
+
 const faqSchema = {
 	"@context": "https://schema.org",
 	"@type": "FAQPage",
-	mainEntity: [
-		{
-			"@type": "Question",
-			name: "Czy wykonujecie domy modułowe w Mińsku Mazowieckim?",
-			acceptedAnswer: {
-				"@type": "Answer",
-				text: "Tak, obsługujemy klientów z Mińska Mazowieckiego oraz okolicznych miejscowości, takich jak Dębe Wielkie, Halinów, Sulejówek, Kałuszyn i Warszawa.",
-			},
+	mainEntity: faqItems.map(({ question, answer }) => ({
+		"@type": "Question",
+		name: question,
+		acceptedAnswer: {
+			"@type": "Answer",
+			text: answer,
 		},
-		{
-			"@type": "Question",
-			name: "Ile kosztuje dom modułowy?",
-			acceptedAnswer: {
-				"@type": "Answer",
-				text: "Cena domu modułowego zależy od powierzchni, układu, standardu wykończenia, zastosowanych materiałów oraz zakresu prac. Najlepiej skontaktować się z nami w celu przygotowania indywidualnej wyceny.",
-			},
-		},
-		{
-			"@type": "Question",
-			name: "Czy dom modułowy może być całoroczny?",
-			acceptedAnswer: {
-				"@type": "Answer",
-				text: "Tak, dom modułowy może być przygotowany do użytkowania całorocznego, z odpowiednią izolacją, instalacjami i standardem wykończenia.",
-			},
-		},
-		{
-			"@type": "Question",
-			name: "Jak długo trwa realizacja domu modułowego?",
-			acceptedAnswer: {
-				"@type": "Answer",
-				text: "Czas realizacji zależy od wybranego projektu, dostępności materiałów, zakresu prac oraz ustaleń z klientem. Budownictwo modułowe zwykle pozwala skrócić czas realizacji względem tradycyjnej budowy.",
-			},
-		},
-	],
+	})),
 };
 
 export default function DomyModuloweMinskMazowieckiPage() {
@@ -58,7 +60,9 @@ export default function DomyModuloweMinskMazowieckiPage() {
 		<>
 			<script
 				type="application/ld+json"
-				dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+				dangerouslySetInnerHTML={{
+					__html: JSON.stringify(faqSchema).replace(/</g, "\\u003c"),
+				}}
 			/>
 
 			<Header />
@@ -165,32 +169,19 @@ export default function DomyModuloweMinskMazowieckiPage() {
 					</div>
 				</section>
 
-				<Process />
+				<Process variant="house" />
 
 				<section style={{ padding: "80px 24px", background: "#f6f8f8" }}>
 					<div style={{ maxWidth: "1180px", margin: "0 auto" }}>
 						<h2>FAQ — domy modułowe Mińsk Mazowiecki</h2>
 
 						<div style={{ marginTop: "30px", display: "grid", gap: "18px" }}>
-							<details>
-								<summary>Czy wykonujecie domy modułowe w Mińsku Mazowieckim?</summary>
-								<p>Tak, obsługujemy Mińsk Mazowiecki i okoliczne miejscowości.</p>
-							</details>
-
-							<details>
-								<summary>Ile kosztuje dom modułowy?</summary>
-								<p>Cena zależy od powierzchni, układu, standardu i zakresu prac.</p>
-							</details>
-
-							<details>
-								<summary>Czy dom modułowy może być całoroczny?</summary>
-								<p>Tak, dom może być przygotowany do użytkowania całorocznego.</p>
-							</details>
-
-							<details>
-								<summary>Czy działacie również w Warszawie?</summary>
-								<p>Tak, realizujemy projekty także w Warszawie i na terenie Mazowsza.</p>
-							</details>
+							{faqItems.map(({ question, answer }) => (
+								<details key={question}>
+									<summary>{question}</summary>
+									<p>{answer}</p>
+								</details>
+							))}
 						</div>
 					</div>
 				</section>
