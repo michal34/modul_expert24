@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	if (!model) return {};
 
 	return {
-		title: `${model.title} | Moduł Expert24`,
+		title: `${model.title}`,
 		description: model.description,
 		alternates: {
 			canonical: `${SITE_URL}/modele/${model.slug}`,
