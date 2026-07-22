@@ -71,10 +71,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			<body>
 				<Script
 					src="https://www.googletagmanager.com/gtag/js?id=AW-16524087663"
-					strategy="afterInteractive"
+					strategy="lazyOnload"
 				/>
 
-				<Script id="google-ads" strategy="afterInteractive">
+				<Script id="google-ads" strategy="lazyOnload">
 					{`
 				window.dataLayer = window.dataLayer || [];
 				function gtag(){dataLayer.push(arguments);}

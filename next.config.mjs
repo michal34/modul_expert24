@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	// tutaj swoje ustawienia
+	images: {
+		qualities: [60, 75],
+	},
 };
 
 export default nextConfig;

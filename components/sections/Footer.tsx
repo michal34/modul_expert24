@@ -14,10 +14,11 @@ export default function Footer() {
 					<div>
 						<Link href="/" aria-label="Strona główna Moduł Expert 24">
 							<Image
-								src="/images/logo.svg"
+								src="/images/logo.webp"
 								alt="Moduł Expert 24"
 								width={160}
-								height={60}
+								height={57}
+								unoptimized
 								className="h-auto w-[150px]"
 							/>
 						</Link>

@@ -206,7 +206,7 @@ const articleSchema = {
 		url: SITE_URL,
 		logo: {
 			"@type": "ImageObject",
-			url: `${SITE_URL}/images/logo.svg`,
+			url: `${SITE_URL}/images/logo.webp`,
 		},
 	},
 };

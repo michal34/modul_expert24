@@ -34,11 +34,12 @@ export default function Header() {
 					className="flex items-center"
 				>
 					<Image
-						src="/images/logo.svg"
+						src="/images/logo.webp"
 						alt="Moduł Expert 24"
 						width={180}
-						height={70}
+						height={64}
 						priority
+						unoptimized
 						className="h-auto w-[130px] sm:w-[150px] md:w-[165px]"
 					/>
 				</Link>
