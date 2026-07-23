@@ -27,7 +27,7 @@ async function sendEmail({
 }) {
 	await resend.emails.send({
 		from: "onboarding@resend.dev",
-		to: ["biuro@modulexpert24.pl"],
+		to: ["michalcyran1337@gmail.com"],
 		replyTo: email,
 		subject: `Nowa wiadomość od ${name}`,
 		html: `
