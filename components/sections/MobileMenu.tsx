@@ -5,20 +5,35 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
-type NavigationLink = {
-	label: string;
-	href: string;
-};
-
 type MobileMenuProps = {
-	links: NavigationLink[];
+	links: ReadonlyArray<{
+		label: string;
+		href: string;
+	}>;
+	activeHref?: string;
 };
 
-export default function MobileMenu({ links }: MobileMenuProps) {
-	const [isOpen, setIsOpen] = useState(false);
+export default function MobileMenu({ links, activeHref }: MobileMenuProps) {
 	const pathname = usePathname();
+	const [isOpen, setIsOpen] = useState(false);
 	const buttonRef = useRef<HTMLButtonElement>(null);
 	const firstLinkRef = useRef<HTMLAnchorElement>(null);
+
+	function isLinkActive(href: string) {
+		if (activeHref) {
+			return href === activeHref;
+		}
+
+		if (href === "/modele") {
+			return pathname === "/modele" || pathname.startsWith("/modele/");
+		}
+
+		if (href === "/domy-modulowe") {
+			return pathname.startsWith("/domy-modulowe");
+		}
+
+		return pathname === href;
+	}
 
 	useEffect(() => {
 		if (!isOpen) {
@@ -66,7 +81,7 @@ export default function MobileMenu({ links }: MobileMenuProps) {
 						aria-label="Nawigacja mobilna"
 					>
 						{links.map((link, index) => {
-							const active = pathname === link.href || pathname.startsWith(`${link.href}/`);
+							const active = isLinkActive(link.href);
 
 							return (
 								<Link
@@ -76,7 +91,9 @@ export default function MobileMenu({ links }: MobileMenuProps) {
 									onClick={closeMenu}
 									aria-current={active ? "page" : undefined}
 									className={`border-b border-black/5 py-4 text-[17px] font-semibold transition-colors ${
-										active ? "text-[#9a4300]" : "text-black hover:text-[#9a4300]"
+										active
+											? "border-l-4 border-l-[#ef9228] bg-[#fff7ef] pl-4 text-[#9a4300]"
+											: "text-black hover:text-[#9a4300]"
 									}`}
 								>
 									{link.label}
