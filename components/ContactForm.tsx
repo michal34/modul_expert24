@@ -43,7 +43,7 @@ export default function ContactForm() {
 				data-lpignore="true"
 				aria-hidden="true"
 			/>
-			<input type="hidden" name="source" value="Formularz na stronie kontaktowej" />
+			<input type="hidden" name="source" value="Formularz na stronie kontaktowej Moduł Expert24" />
 
 			<div className="grid gap-5 md:grid-cols-2">
 				<div>

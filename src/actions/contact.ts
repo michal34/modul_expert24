@@ -115,7 +115,7 @@ async function sendEmail({ name, phone, email, message, source }: ContactValues)
 	const resend = new Resend(apiKey);
 	const { error } = await resend.emails.send({
 		from: CONTACT_FORM_FROM,
-		to: `michalcyran1337@gmail.com`,
+		to: [CONTACT.email],
 		replyTo: email,
 		subject: `${source}: wiadomość od ${name}`,
 		text: [
@@ -127,7 +127,7 @@ async function sendEmail({ name, phone, email, message, source }: ContactValues)
 			message,
 		].join("\n"),
 		html: `
-			<h2>Nowa wiadomość z formularza</h2>
+			<h2>Nowa wiadomość z formularza Moduł Expert24</h2>
 			<p><strong>Źródło:</strong> ${escapeHtml(source)}</p>
 			<p><strong>Imię:</strong> ${escapeHtml(name)}</p>
 			<p><strong>Telefon:</strong> ${escapeHtml(phone)}</p>
