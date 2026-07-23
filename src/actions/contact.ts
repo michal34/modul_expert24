@@ -29,9 +29,9 @@ async function sendEmail({
 		from: "onboarding@resend.dev",
 		to: ["michalcyran1337@gmail.com"],
 		replyTo: email,
-		subject: `Nowa wiadomość od ${name}`,
+		subject: `Nowa wiadomość od ${name} z strony Moduł Expert24`,
 		html: `
-			<h2>Nowa wiadomość z formularza</h2>
+			<h2>Nowa wiadomość z formularza Moduł Expert24</h2>
 			<p><strong>Imię:</strong> ${escapeHtml(name)}</p>
 			<p><strong>Telefon:</strong> ${escapeHtml(phone)}</p>
 			<p><strong>E-mail:</strong> ${escapeHtml(email)}</p>
