@@ -1,35 +1,37 @@
+import Link from "next/link";
+
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
 import FinalCta from "@/components/sections/FinalCta";
-import type { Metadata } from "next";
+import { createSeoMetadata } from "@/src/lib/seo";
+import { CONTACT, ORGANIZATION_ID, SITE_NAME, SITE_URL } from "@/src/lib/site";
 import "./o-nas.css";
 
-export const metadata: Metadata = {
-	title: "O nas | Moduł Expert 24",
+export const metadata = createSeoMetadata({
+	title: "O firmie | Moduł Expert24",
 	description:
-		"Poznaj firmę Moduł Expert 24 z Dębego Wielkiego. Projektujemy domy modułowe, domy kontenerowe i pawilony handlowe w Warszawie, Mińsku Mazowieckim i na Mazowszu.",
-	alternates: {
-		canonical: "https://www.modulexpert24.pl/o-nas",
-	},
-};
+		"Poznaj Moduł Expert24. Projektujemy domy modułowe, kontenery i pawilony handlowe dla klientów z Warszawy, Mińska Mazowieckiego i całego Mazowsza.",
+	path: "/o-nas",
+});
 
 const aboutSchema = {
 	"@context": "https://schema.org",
 	"@type": "AboutPage",
-	name: "O nas | Moduł Expert 24",
-	url: "https://www.modulexpert24.pl/o-nas",
-	description:
-		"Informacje o firmie Moduł Expert 24, producencie domów modułowych, domów kontenerowych i pawilonów handlowych na Mazowszu.",
+	name: `O firmie | ${SITE_NAME}`,
+	url: `${SITE_URL}/o-nas`,
+	description: `Informacje o ${SITE_NAME}, firmie realizującej domy modułowe, kontenery i pawilony handlowe na Mazowszu.`,
 	mainEntity: {
 		"@type": "HomeAndConstructionBusiness",
-		name: "Moduł Expert 24",
-		url: "https://www.modulexpert24.pl",
-		telephone: "+48575203444",
+		"@id": ORGANIZATION_ID,
+		name: SITE_NAME,
+		url: SITE_URL,
+		telephone: CONTACT.phoneHref,
+		email: CONTACT.email,
 		address: {
 			"@type": "PostalAddress",
-			streetAddress: "Choszczówka Rudzka 13",
-			postalCode: "05-311",
-			addressLocality: "Choszczówka Rudzka",
+			streetAddress: CONTACT.streetAddress,
+			postalCode: CONTACT.postalCode,
+			addressLocality: CONTACT.locality,
 			addressCountry: "PL",
 		},
 		areaServed: [
@@ -48,18 +50,20 @@ export default function AboutPage() {
 		<>
 			<script
 				type="application/ld+json"
-				dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
+				dangerouslySetInnerHTML={{
+					__html: JSON.stringify(aboutSchema).replace(/</g, "\\u003c"),
+				}}
 			/>
 
 			<Header />
 
-			<main className="aboutPage">
+			<main id="main-content" tabIndex={-1} className="aboutPage">
 				<section className="aboutHero">
 					<div className="aboutContainer aboutHeroGrid">
 						<div className="aboutHeroContent">
 							<p className="aboutEyebrow">O firmie</p>
 
-							<h1>Moduł Expert 24</h1>
+							<h1>{SITE_NAME}</h1>
 
 							<p className="aboutLead">
 								Projektujemy i realizujemy domy modułowe, domy kontenerowe oraz pawilony handlowe
@@ -67,18 +71,18 @@ export default function AboutPage() {
 							</p>
 
 							<p className="aboutHeroText">
-								Jesteśmy firmą z okolic Mińsk Mazowieckiego. Obsługujemy głównie okolice Mińska
+								Jesteśmy firmą z okolic Mińska Mazowieckiego. Obsługujemy głównie okolice Mińska
 								Mazowieckiego, Warszawy, Sulejówka, Halinowa oraz całe województwo mazowieckie.
 							</p>
 
 							<div className="aboutHeroActions">
-								<a href="/kontakt" className="aboutButtonPrimary">
+								<Link href="/kontakt" className="aboutButtonPrimary">
 									Skontaktuj się z nami
-								</a>
+								</Link>
 
-								<a href="/modele" className="aboutButtonSecondary">
-									Zobacz modele
-								</a>
+								<Link href="/modele" className="aboutButtonSecondary">
+									Zobacz modele pawilonów
+								</Link>
 							</div>
 
 							<div className="aboutStats">
@@ -202,7 +206,7 @@ export default function AboutPage() {
 					</div>
 				</section>
 
-				<FinalCta />
+				<FinalCta variant="general" />
 			</main>
 
 			<Footer />

@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import ModelLink from "@/components/ModelLink";
+
 type ModelItem = {
 	name: string;
 	image: string;
@@ -41,9 +43,10 @@ export default function Models() {
 				</div>
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-16 gap-y-12">
 					{models.map((model, index) => (
-						<Link
+						<ModelLink
 							key={model.name}
-							href={model.href + "?from=home"}
+							href={model.href}
+							source="home"
 							className={`group block ${index === 3 ? "hidden lg:block" : ""}`}
 						>
 							<article className="flex flex-col items-start">
@@ -59,13 +62,13 @@ export default function Models() {
 									/>
 								</div>
 							</article>
-						</Link>
+						</ModelLink>
 					))}
 				</div>
 				<div className="mt-16 flex justify-center">
 					<Link
 						href="/modele"
-						className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-[#ef9228] px-8 text-[15px] font-medium text-black transition-colors duration-300 hover:bg-[#ef9228] hover:text-white md:min-h-[56px] md:px-12 md:text-[18px]"
+						className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-[#ef9228] px-8 text-[15px] font-medium text-black transition-colors duration-300 hover:bg-[#ef9228] hover:text-[#13272f] md:min-h-[56px] md:px-12 md:text-[18px]"
 					>
 						Zobacz Wszystkie Modele
 					</Link>
@@ -74,7 +77,7 @@ export default function Models() {
 					Planujesz inwestycję w okolicy? Sprawdź{" "}
 					<Link
 						href="/domy-modulowe-minsk-mazowiecki"
-						className="font-semibold text-[#c66c0d] underline-offset-4 hover:underline"
+						className="font-semibold text-[#9a4300] underline-offset-4 hover:underline"
 					>
 						domy i domki modułowe w Mińsku Mazowieckim
 					</Link>

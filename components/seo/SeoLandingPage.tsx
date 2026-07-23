@@ -41,6 +41,10 @@ type SeoLandingPageProps = {
 	ctaText: string;
 	jsonLd: Record<string, unknown>[];
 	updatedAt?: string;
+	secondaryCta?: {
+		label: string;
+		href: string;
+	};
 };
 
 export default function SeoLandingPage({
@@ -56,6 +60,10 @@ export default function SeoLandingPage({
 	ctaText,
 	jsonLd,
 	updatedAt,
+	secondaryCta = {
+		label: "Poznaj ofertę domów",
+		href: "/domy-modulowe",
+	},
 }: SeoLandingPageProps) {
 	return (
 		<>
@@ -71,21 +79,21 @@ export default function SeoLandingPage({
 
 			<Header />
 
-			<main className="bg-white text-[#13272f]">
+			<main id="main-content" tabIndex={-1} className="bg-white text-[#13272f]">
 				<section className="bg-gradient-to-br from-[#f7fafb] via-white to-[#fff2e4] px-6 py-16 md:py-24">
 					<div className="mx-auto max-w-[1180px]">
 						<nav
 							aria-label="Breadcrumb"
 							className="mb-8 flex flex-wrap items-center gap-2 text-sm text-black/55"
 						>
-							<Link href="/" className="transition hover:text-[#c66c0d]">
+							<Link href="/" className="transition hover:text-[#9a4300]">
 								Strona główna
 							</Link>
 							<span aria-hidden="true">/</span>
 							<span aria-current="page">{breadcrumbLabel}</span>
 						</nav>
 
-						<p className="text-sm font-bold uppercase tracking-[0.14em] text-[#c66c0d]">
+						<p className="text-sm font-bold uppercase tracking-[0.14em] text-[#9a4300]">
 							{eyebrow}
 						</p>
 						<h1 className="mt-4 max-w-[980px] text-[38px] font-medium leading-[1.05] tracking-[-0.04em] md:text-[58px] lg:text-[68px]">
@@ -98,15 +106,15 @@ export default function SeoLandingPage({
 						<div className="mt-10 flex flex-wrap gap-4">
 							<Link
 								href="/kontakt"
-								className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#ef9228] px-7 font-semibold text-white transition hover:bg-[#d97918]"
+								className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#ef9228] px-7 font-semibold text-[#13272f] transition hover:bg-[#d97918]"
 							>
 								Poproś o wycenę
 							</Link>
 							<Link
-								href="/modele"
-								className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#13272f]/20 bg-white px-7 font-semibold transition hover:border-[#ef9228] hover:text-[#c66c0d]"
+								href={secondaryCta.href}
+								className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#13272f]/20 bg-white px-7 font-semibold transition hover:border-[#ef9228] hover:text-[#9a4300]"
 							>
-								Zobacz modele
+								{secondaryCta.label}
 							</Link>
 						</div>
 
@@ -137,7 +145,7 @@ export default function SeoLandingPage({
 					>
 						<div className="mx-auto max-w-[1180px]">
 							{section.eyebrow && (
-								<p className="text-sm font-bold uppercase tracking-[0.14em] text-[#c66c0d]">
+								<p className="text-sm font-bold uppercase tracking-[0.14em] text-[#9a4300]">
 									{section.eyebrow}
 								</p>
 							)}
@@ -186,7 +194,7 @@ export default function SeoLandingPage({
 
 				<section className="bg-[#f6f8f8] px-6 py-16 md:py-24">
 					<div className="mx-auto max-w-[980px]">
-						<p className="text-sm font-bold uppercase tracking-[0.14em] text-[#c66c0d]">FAQ</p>
+						<p className="text-sm font-bold uppercase tracking-[0.14em] text-[#9a4300]">FAQ</p>
 						<h2 className="mt-3 text-[30px] font-medium leading-[1.12] tracking-[-0.03em] md:text-[44px]">
 							Najczęściej zadawane pytania
 						</h2>
@@ -196,8 +204,14 @@ export default function SeoLandingPage({
 									key={item.question}
 									className="group rounded-[16px] border border-black/10 bg-white p-5 open:shadow-sm"
 								>
-									<summary className="cursor-pointer list-none pr-8 text-lg font-semibold marker:hidden">
-										{item.question}
+									<summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold marker:hidden">
+										<span>{item.question}</span>
+										<span
+											aria-hidden="true"
+											className="text-2xl font-light text-[#9a4300] transition group-open:rotate-45"
+										>
+											+
+										</span>
 									</summary>
 									<p className="mt-4 border-t border-black/10 pt-4 leading-7 text-[#53646b]">
 										{item.answer}
@@ -222,7 +236,7 @@ export default function SeoLandingPage({
 								>
 									<h3 className="text-xl font-semibold">{item.title}</h3>
 									<p className="mt-3 leading-7 text-[#53646b]">{item.description}</p>
-									<span className="mt-5 inline-flex font-semibold text-[#c66c0d]">
+									<span className="mt-5 inline-flex font-semibold text-[#9a4300]">
 										Czytaj więcej →
 									</span>
 								</Link>
@@ -241,7 +255,7 @@ export default function SeoLandingPage({
 						</p>
 						<Link
 							href="/kontakt"
-							className="mt-8 inline-flex min-h-[52px] items-center justify-center rounded-full bg-[#ef9228] px-8 text-lg font-semibold text-white transition hover:bg-[#d97918]"
+							className="mt-8 inline-flex min-h-[52px] items-center justify-center rounded-full bg-[#ef9228] px-8 text-lg font-semibold text-[#13272f] transition hover:bg-[#d97918]"
 						>
 							Wypełnij formularz
 						</Link>

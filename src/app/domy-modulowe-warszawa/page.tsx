@@ -115,7 +115,7 @@ const sections: SeoSection[] = [
 				Jeśli inwestycja znajduje się bliżej Mińska Mazowieckiego, sprawdź również stronę{" "}
 				<Link
 					href="/domy-modulowe-minsk-mazowiecki"
-					className="font-semibold text-[#c66c0d] underline-offset-4 hover:underline"
+					className="font-semibold text-[#9a4300] underline-offset-4 hover:underline"
 				>
 					domy modułowe Mińsk Mazowiecki
 				</Link>
@@ -167,9 +167,9 @@ export default function DomyModuloweWarszawaPage() {
 					href: "/dom-modulowy-formalnosci",
 				},
 				{
-					title: "Modele",
-					description: "Poznaj dostępne warianty i możliwości konfiguracji.",
-					href: "/modele",
+					title: "Oferta domów modułowych",
+					description: "Poznaj zakres projektu, produkcji, transportu i montażu.",
+					href: "/domy-modulowe",
 				},
 			]}
 			ctaTitle="Planujesz dom modułowy w Warszawie?"

@@ -48,7 +48,7 @@ function getProcessSteps(variant: ProcessVariant): ProcessStep[] {
 			description:
 				variant === "house"
 					? "Przekazujemy gotowy dom modułowy do użytkowania i przeprowadzamy końcowy odbiór obiektu."
-					: "Przekazujemy gotowy pawilon do użytkowania. Możesz od razu rozpocząć działalność.",
+					: "Przekazujemy gotowy pawilon po końcowym odbiorze. Rozpoczęcie użytkowania zależy również od spełnienia formalności właściwych dla inwestycji.",
 		},
 	];
 }

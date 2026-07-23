@@ -1,6 +1,4 @@
 import Header from "@/components/sections/Header";
-import ScrollToSection from "@/components/ScrollToSection";
-import { Suspense } from "react";
 import Hero from "@/components/Hero";
 import Benefits from "@/components/sections/Benefits";
 import Models from "@/components/Models";
@@ -12,32 +10,32 @@ import InteriorFeatures from "@/components/sections/InteriorFeatures";
 import PricingForm from "@/components/sections/PricingForm";
 import Faq from "@/components/sections/Faq";
 import Process from "@/components/sections/Process";
-import Gallery from "@/components/Gallery";
 import FinalCta from "@/components/sections/FinalCta";
 import Footer from "@/components/sections/Footer";
-import type { Metadata } from "next";
+import { createSeoMetadata } from "@/src/lib/seo";
+import { CONTACT, ORGANIZATION_ID, SITE_NAME, SITE_URL } from "@/src/lib/site";
 
-export const metadata: Metadata = {
-	title: "Moduł Expert24 – Domy modułowe i pawilony handlowe | Mazowieckie",
+export const metadata = createSeoMetadata({
+	title: "Domy modułowe i pawilony handlowe na Mazowszu | Moduł Expert24",
 	description:
-		"Producent domów modułowych i pawilonów modułowych na terenie Mazowieckiego. Warszawa, Mińsk Mazowiecki i okolice. Sprawdź ofertę i realizacje.",
-	alternates: {
-		canonical: "https://www.modulexpert24.pl",
-	},
-};
+		"Domy modułowe i pawilony handlowe na terenie Mazowsza. Warszawa, Mińsk Mazowiecki i okolice. Sprawdź ofertę i poproś o indywidualną wycenę.",
+	path: "",
+});
 
 const localBusinessSchema = {
 	"@context": "https://schema.org",
 	"@type": "HomeAndConstructionBusiness",
-	name: "Moduł Expert24",
-	image: "https://www.modulexpert24.pl/images/hero.webp",
-	url: "https://www.modulexpert24.pl",
-	telephone: "+48575203444",
+	"@id": ORGANIZATION_ID,
+	name: SITE_NAME,
+	image: `${SITE_URL}/images/hero.webp`,
+	url: SITE_URL,
+	telephone: CONTACT.phoneHref,
+	email: CONTACT.email,
 	address: {
 		"@type": "PostalAddress",
-		streetAddress: "Choszczówka Rudzka 13",
-		postalCode: "05-311",
-		addressLocality: "Choszczówka Rudzka",
+		streetAddress: CONTACT.streetAddress,
+		postalCode: CONTACT.postalCode,
+		addressLocality: CONTACT.locality,
 		addressCountry: "PL",
 	},
 	areaServed: [
@@ -62,14 +60,6 @@ const localBusinessSchema = {
 			name: "Mazowieckie",
 		},
 	],
-	openingHoursSpecification: [
-		{
-			"@type": "OpeningHoursSpecification",
-			dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-			opens: "08:00",
-			closes: "17:00",
-		},
-	],
 	sameAs: ["https://www.facebook.com/profile.php?id=61590299923979"],
 };
 
@@ -81,17 +71,9 @@ const serviceSchema = {
 		"Projektowanie, produkcja i sprzedaż domów modułowych oraz pawilonów modułowych na terenie województwa mazowieckiego, w tym Warszawy i Mińska Mazowieckiego.",
 	provider: {
 		"@type": "HomeAndConstructionBusiness",
-		name: "Moduł Expert 24",
-		url: "https://www.modulexpert24.pl",
-		image: "https://www.modulexpert24.pl/images/hero.webp",
-		telephone: "+48575203444",
-		address: {
-			"@type": "PostalAddress",
-			streetAddress: "Choszczówka Rudzka 13",
-			postalCode: "05-311",
-			addressLocality: "Choszczówka Rudzka",
-			addressCountry: "PL",
-		},
+		"@id": ORGANIZATION_ID,
+		name: SITE_NAME,
+		url: SITE_URL,
 	},
 	areaServed: [
 		{
@@ -108,7 +90,7 @@ const serviceSchema = {
 		},
 	],
 	serviceType: ["Domy modułowe", "Pawilony modułowe", "Domki całoroczne"],
-	url: "https://www.modulexpert24.pl",
+	url: SITE_URL,
 };
 
 const faqSchema = {
@@ -180,26 +162,23 @@ export default function HomePage() {
 			<script
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{
-					__html: JSON.stringify(localBusinessSchema),
+					__html: JSON.stringify(localBusinessSchema).replace(/</g, "\\u003c"),
 				}}
 			/>
 			<script
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{
-					__html: JSON.stringify(serviceSchema),
+					__html: JSON.stringify(serviceSchema).replace(/</g, "\\u003c"),
 				}}
 			/>
 			<script
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{
-					__html: JSON.stringify(faqSchema),
+					__html: JSON.stringify(faqSchema).replace(/</g, "\\u003c"),
 				}}
 			/>
 			<Header />
-			<main>
-				<Suspense fallback={null}>
-					<ScrollToSection />
-				</Suspense>
+			<main id="main-content" tabIndex={-1}>
 				<Hero />
 				<Benefits />
 				<Models />
@@ -209,10 +188,9 @@ export default function HomePage() {
 				<UseCases />
 				<InteriorFeatures />
 				<Process />
-				<PricingForm />
+				<PricingForm variant="general" />
 				<Faq />
-				{/* <Gallery /> */}
-				<FinalCta />
+				<FinalCta variant="general" />
 			</main>
 			<Footer />
 		</>

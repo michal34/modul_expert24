@@ -89,7 +89,7 @@ const sections: SeoSection[] = [
 				Zobacz dostępne warianty na stronie{" "}
 				<Link
 					href="/modele"
-					className="font-semibold text-[#c66c0d] underline-offset-4 hover:underline"
+					className="font-semibold text-[#9a4300] underline-offset-4 hover:underline"
 				>
 					modele pawilonów modułowych
 				</Link>
@@ -136,7 +136,7 @@ const sections: SeoSection[] = [
 				poradniku{" "}
 				<Link
 					href="/dom-modulowy-formalnosci"
-					className="font-semibold text-[#c66c0d] underline-offset-4 hover:underline"
+					className="font-semibold text-[#9a4300] underline-offset-4 hover:underline"
 				>
 					dom modułowy i pawilon a formalności
 				</Link>
@@ -156,6 +156,10 @@ export default function PawilonyHandlowePage() {
 			eyebrow="Oferta dla biznesu"
 			title="Pawilony handlowe i usługowe na zamówienie"
 			lead="Zaprojektuj przestrzeń dopasowaną do sprzedaży, usług lub obsługi klientów. Ustalamy wymiary, układ, wygląd i instalacje, a następnie przygotowujemy indywidualną wycenę."
+			secondaryCta={{
+				label: "Zobacz modele pawilonów",
+				href: "/modele",
+			}}
 			highlights={[
 				{
 					title: "Indywidualny układ",

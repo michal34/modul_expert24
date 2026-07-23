@@ -4,9 +4,8 @@ import PricingForm from "@/components/sections/PricingForm";
 import FinalCta from "@/components/sections/FinalCta";
 import Footer from "@/components/sections/Footer";
 import Link from "next/link";
-import type { Metadata } from "next";
-
-const SITE_URL = "https://www.modulexpert24.pl";
+import { createSeoMetadata } from "@/src/lib/seo";
+import { CONTACT, ORGANIZATION_ID, SITE_NAME, SITE_URL } from "@/src/lib/site";
 
 const sectionTitleStyle = {
 	fontSize: "clamp(30px, 4vw, 44px)",
@@ -22,31 +21,12 @@ const bodyTextStyle = {
 	color: "#53646b",
 };
 
-export const metadata: Metadata = {
-	title: {
-		absolute: "Domy i domki modułowe Mińsk Mazowiecki – wycena",
-	},
+export const metadata = createSeoMetadata({
+	title: "Domy i domki modułowe Mińsk Mazowiecki — wycena",
 	description:
 		"Całoroczne domy i domki modułowe w Mińsku Mazowieckim. Projekt, produkcja, transport i montaż. Zobacz możliwości i zamów indywidualną wycenę.",
-	alternates: {
-		canonical: `${SITE_URL}/domy-modulowe-minsk-mazowiecki`,
-	},
-	openGraph: {
-		title: "Domy i domki modułowe Mińsk Mazowiecki – wycena",
-		description:
-			"Projektujemy i realizujemy domy oraz domki modułowe w Mińsku Mazowieckim i okolicach.",
-		url: `${SITE_URL}/domy-modulowe-minsk-mazowiecki`,
-		type: "website",
-		images: [
-			{
-				url: "/images/hero.webp",
-				width: 1536,
-				height: 1024,
-				alt: "Nowoczesny dom modułowy Moduł Expert 24",
-			},
-		],
-	},
-};
+	path: "/domy-modulowe-minsk-mazowiecki",
+});
 
 const faqItems = [
 	{
@@ -99,9 +79,10 @@ const localServiceSchema = {
 	serviceType: ["Domy modułowe", "Domki modułowe", "Domy modułowe całoroczne"],
 	provider: {
 		"@type": "HomeAndConstructionBusiness",
-		name: "Moduł Expert 24",
+		"@id": ORGANIZATION_ID,
+		name: SITE_NAME,
 		url: SITE_URL,
-		telephone: "+48575203444",
+		telephone: CONTACT.phoneHref,
 	},
 	areaServed: [
 		{ "@type": "City", name: "Mińsk Mazowiecki" },
@@ -152,12 +133,12 @@ export default function DomyModuloweMinskMazowieckiPage() {
 
 			<Header />
 
-			<main>
+			<main id="main-content" tabIndex={-1}>
 				<section style={{ padding: "90px 24px", background: "#f6f8f8" }}>
 					<div style={{ maxWidth: "1180px", margin: "0 auto" }}>
 						<p
 							style={{
-								color: "#ef9228",
+								color: "#9a4300",
 								fontWeight: 700,
 								textTransform: "uppercase",
 								letterSpacing: ".08em",
@@ -179,7 +160,7 @@ export default function DomyModuloweMinskMazowieckiPage() {
 						</h1>
 
 						<p style={{ maxWidth: "780px", fontSize: "20px", lineHeight: 1.7, color: "#53646b" }}>
-							Moduł Expert 24 projektuje i realizuje domy oraz domki modułowe dla klientów z Mińska
+							{SITE_NAME} projektuje i realizuje domy oraz domki modułowe dla klientów z Mińska
 							Mazowieckiego i okolic. Tworzymy obiekty dopasowane do potrzeb mieszkaniowych,
 							rekreacyjnych i inwestycyjnych.
 						</p>
@@ -219,8 +200,8 @@ export default function DomyModuloweMinskMazowieckiPage() {
 
 						<p style={{ ...bodyTextStyle, marginTop: "18px" }}>
 							Możesz zacząć od wyboru jednego z naszych{" "}
-							<Link href="/modele" style={{ color: "#c66c0d", fontWeight: 700 }}>
-								modeli pawilonów i obiektów modułowych
+							<Link href="/domy-modulowe" style={{ color: "#9a4300", fontWeight: 700 }}>
+								oferty domów modułowych
 							</Link>
 							, a następnie dopasować układ, wymiary i standard wykończenia do swojej działki oraz
 							planowanego sposobu użytkowania.
@@ -269,7 +250,7 @@ export default function DomyModuloweMinskMazowieckiPage() {
 					<div style={{ maxWidth: "1180px", margin: "0 auto" }}>
 						<p
 							style={{
-								color: "#c66c0d",
+								color: "#9a4300",
 								fontWeight: 700,
 								textTransform: "uppercase",
 								letterSpacing: ".08em",
@@ -279,13 +260,13 @@ export default function DomyModuloweMinskMazowieckiPage() {
 						</p>
 
 						<h2 style={{ ...sectionTitleStyle, maxWidth: "850px", marginTop: "12px" }}>
-							Budowa domu modułowego w Mińsku Mazowieckim — od założeń do montażu
+							Co ustalamy przed rozpoczęciem produkcji?
 						</h2>
 
 						<p style={{ ...bodyTextStyle, marginTop: "20px" }}>
-							Każdą realizację rozpoczynamy od poznania przeznaczenia obiektu, oczekiwanego metrażu,
-							układu pomieszczeń i miejsca montażu. Na tej podstawie przygotowujemy konfigurację
-							oraz indywidualną wycenę domu lub domku modułowego.
+							Przed rozpoczęciem realizacji porządkujemy założenia techniczne, zakres wykończenia i
+							warunki działki. Pełny przebieg produkcji, transportu oraz montażu przedstawiamy w
+							kolejnym bloku.
 						</p>
 
 						<div
@@ -298,20 +279,20 @@ export default function DomyModuloweMinskMazowieckiPage() {
 						>
 							{[
 								[
-									"1. Potrzeby i lokalizacja",
+									"Potrzeby i lokalizacja",
 									"Ustalamy sposób użytkowania, planowany metraż oraz warunki transportu i montażu na działce.",
 								],
 								[
-									"2. Układ i wyposażenie",
+									"Układ i wyposażenie",
 									"Dobieramy układ pomieszczeń, otwory okienne, elewację, instalacje i standard wykończenia.",
 								],
 								[
-									"3. Produkcja modułów",
-									"Elementy obiektu powstają w hali, co ułatwia kontrolę wykonania i organizację kolejnych prac.",
+									"Zakres techniczny",
+									"Ustalamy konstrukcję, parametry przegród, stolarkę oraz zakres prac po dostawie.",
 								],
 								[
-									"4. Transport i montaż",
-									"Uzgadniamy logistykę dostawy, ustawienie modułów, montaż oraz końcowe sprawdzenie obiektu.",
+									"Logistyka działki",
+									"Sprawdzamy dojazd, miejsce ustawienia modułów i warunki potrzebne do bezpiecznego montażu.",
 								],
 							].map(([title, description]) => (
 								<article
@@ -402,7 +383,7 @@ export default function DomyModuloweMinskMazowieckiPage() {
 
 						<p style={{ ...bodyTextStyle, marginTop: "24px" }}>
 							Jeśli rozważasz budowę w Mińsku Mazowieckim lub okolicy,{" "}
-							<Link href="/kontakt" style={{ color: "#c66c0d", fontWeight: 700 }}>
+							<Link href="/kontakt" style={{ color: "#9a4300", fontWeight: 700 }}>
 								opisz nam swoją działkę i oczekiwany metraż
 							</Link>
 							. Na tej podstawie wskażemy możliwy zakres realizacji i przygotujemy indywidualną
@@ -426,8 +407,8 @@ export default function DomyModuloweMinskMazowieckiPage() {
 					</div>
 				</section>
 
-				<PricingForm />
-				<FinalCta />
+				<PricingForm variant="house" />
+				<FinalCta variant="house" />
 			</main>
 
 			<Footer />

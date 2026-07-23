@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 
 import type { SeoFaq } from "@/components/seo/SeoLandingPage";
+import { CONTACT, ORGANIZATION_ID, SITE_NAME, SITE_URL } from "@/src/lib/site";
 
-export const SITE_URL = "https://www.modulexpert24.pl";
-export const DEFAULT_OG_IMAGE = "/images/hero.webp";
+export { SITE_URL };
+export const DEFAULT_OG_IMAGE = "/opengraph-image";
 
 type MetadataInput = {
 	title: string;
@@ -30,15 +31,23 @@ export function createSeoMetadata({ title, description, path }: MetadataInput): 
 			title,
 			description,
 			url: `${SITE_URL}${path}`,
+			siteName: SITE_NAME,
+			locale: "pl_PL",
 			type: "website",
 			images: [
 				{
 					url: DEFAULT_OG_IMAGE,
-					width: 1536,
-					height: 1024,
-					alt: "Domy i obiekty modułowe Moduł Expert 24",
+					width: 1200,
+					height: 630,
+					alt: `Domy i obiekty modułowe — ${SITE_NAME}`,
 				},
 			],
+		},
+		twitter: {
+			card: "summary_large_image",
+			title,
+			description,
+			images: [DEFAULT_OG_IMAGE],
 		},
 	};
 }
@@ -95,9 +104,10 @@ export function createServiceSchema({
 		serviceType,
 		provider: {
 			"@type": "HomeAndConstructionBusiness",
-			name: "Moduł Expert 24",
+			"@id": ORGANIZATION_ID,
+			name: SITE_NAME,
 			url: SITE_URL,
-			telephone: "+48575203444",
+			telephone: CONTACT.phoneHref,
 		},
 		areaServed: areas.map((name) => ({
 			"@type":

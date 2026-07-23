@@ -75,8 +75,8 @@ export default function WhyDetails() {
 						</ul>
 
 						<p className="mt-8 text-[17px] leading-[1.7] text-black md:text-[19px]">
-							To idealne rozwiązanie dla biznesów, które chcą działać szybko, profesjonalnie i bez
-							zbędnych formalności.
+							To rozwiązanie dla biznesów, które chcą uporządkować realizację i ograniczyć zakres
+							prac prowadzonych bezpośrednio na działce.
 						</p>
 					</div>
 				</div>

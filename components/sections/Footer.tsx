@@ -3,6 +3,9 @@ import Image from "next/image";
 import { ExternalLink, Mail, Phone, MapPin } from "lucide-react";
 import { FaFacebookF } from "react-icons/fa";
 
+import ConsentSettingsButton from "@/components/ConsentSettingsButton";
+import { CONTACT, SITE_NAME } from "@/src/lib/site";
+
 const MAPS_URL =
 	"https://www.google.com/maps/search/?api=1&query=Choszcz%C3%B3wka+Rudzka+13%2C+05-311+Choszcz%C3%B3wka+Rudzka";
 
@@ -12,10 +15,10 @@ export default function Footer() {
 			<div className="mx-auto max-w-[1500px] px-4 md:px-6 lg:px-8">
 				<div className="grid gap-x-10 gap-y-12 md:grid-cols-2 xl:grid-cols-[1.15fr_0.75fr_1.1fr_1.05fr_1.4fr] xl:gap-x-12">
 					<div>
-						<Link href="/" aria-label="Strona główna Moduł Expert 24">
+						<Link href="/" aria-label={`Strona główna ${SITE_NAME}`}>
 							<Image
 								src="/images/logo.webp"
-								alt="Moduł Expert 24"
+								alt={SITE_NAME}
 								width={160}
 								height={57}
 								unoptimized
@@ -37,25 +40,30 @@ export default function Footer() {
 
 						<ul className="mt-5 space-y-3 text-[15px] text-black/75">
 							<li>
-								<Link href="/modele" className="transition hover:text-[#ef9228]">
-									Nasze modele
+								<Link href="/domy-modulowe" className="transition hover:text-[#9a4300]">
+									Domy modułowe
+								</Link>
+							</li>
+							<li>
+								<Link href="/modele" className="transition hover:text-[#9a4300]">
+									Modele pawilonów
 								</Link>
 							</li>
 
 							<li>
-								<Link href="/o-nas" className="transition hover:text-[#ef9228]">
+								<Link href="/o-nas" className="transition hover:text-[#9a4300]">
 									O firmie
 								</Link>
 							</li>
 
 							<li>
-								<Link href="/dom-modulowy-formalnosci" className="transition hover:text-[#ef9228]">
+								<Link href="/dom-modulowy-formalnosci" className="transition hover:text-[#9a4300]">
 									Poradnik
 								</Link>
 							</li>
 
 							<li>
-								<Link href="/kontakt" className="transition hover:text-[#ef9228]">
+								<Link href="/kontakt" className="transition hover:text-[#9a4300]">
 									Kontakt
 								</Link>
 							</li>
@@ -68,29 +76,29 @@ export default function Footer() {
 
 						<ul className="mt-5 space-y-3 text-[15px] text-black/75">
 							<li>
-								<Link href="/pawilony-handlowe" className="transition hover:text-[#ef9228]">
+								<Link href="/pawilony-handlowe" className="transition hover:text-[#9a4300]">
 									Pawilony handlowe
 								</Link>
 							</li>
 							<li>
-								<Link href="/kontenery-biurowe" className="transition hover:text-[#ef9228]">
+								<Link href="/kontenery-biurowe" className="transition hover:text-[#9a4300]">
 									Kontenery biurowe
 								</Link>
 							</li>
 							<li>
-								<Link href="/domy-modulowe-cena" className="transition hover:text-[#ef9228]">
+								<Link href="/domy-modulowe-cena" className="transition hover:text-[#9a4300]">
 									Domy modułowe — cena
 								</Link>
 							</li>
 							<li>
-								<Link href="/domy-modulowe-warszawa" className="transition hover:text-[#ef9228]">
+								<Link href="/domy-modulowe-warszawa" className="transition hover:text-[#9a4300]">
 									Domy modułowe Warszawa
 								</Link>
 							</li>
 							<li>
 								<Link
 									href="/domy-modulowe-minsk-mazowiecki"
-									className="transition hover:text-[#ef9228]"
+									className="transition hover:text-[#9a4300]"
 								>
 									Domy modułowe Mińsk Mazowiecki
 								</Link>
@@ -106,26 +114,26 @@ export default function Footer() {
 							<li className="flex items-start gap-3">
 								<MapPin className="mt-[3px] h-5 w-5 shrink-0 text-[#ef9228]" />
 								<address className="not-italic leading-7">
-									Choszczówka Rudzka 13
+									{CONTACT.streetAddress}
 									<br />
-									05-311 Choszczówka Rudzka
+									{CONTACT.postalCode} {CONTACT.locality}
 								</address>
 							</li>
 
 							<li className="flex items-start gap-3">
 								<Mail className="h-5 w-5 shrink-0 text-[#ef9228]" />
 								<a
-									href="mailto:biuro@modulexpert24.pl"
-									className="break-all leading-5 transition hover:text-[#ef9228]"
+									href={`mailto:${CONTACT.email}`}
+									className="break-all leading-5 transition hover:text-[#9a4300]"
 								>
-									biuro@modulexpert24.pl
+									{CONTACT.email}
 								</a>
 							</li>
 
 							<li className="flex items-center gap-3">
 								<Phone className="h-5 w-5 shrink-0 text-[#ef9228]" />
-								<a href="tel:+48575203444" className="transition hover:text-[#ef9228]">
-									+48 575 203 444
+								<a href={`tel:${CONTACT.phoneHref}`} className="transition hover:text-[#9a4300]">
+									{CONTACT.phoneDisplay}
 								</a>
 							</li>
 							<li className="flex items-center gap-3 text-[14px]">
@@ -135,9 +143,9 @@ export default function Footer() {
 									href="https://www.facebook.com/profile.php?id=61590299923979"
 									target="_blank"
 									rel="noopener noreferrer"
-									className="transition hover:text-[#ef9228]"
+									className="transition hover:text-[#9a4300]"
 								>
-									ModułExpert24 na Facebook
+									{SITE_NAME} na Facebook
 								</a>
 							</li>
 						</ul>
@@ -154,8 +162,8 @@ export default function Footer() {
 								href={MAPS_URL}
 								target="_blank"
 								rel="noopener noreferrer"
-								aria-label="Otwórz lokalizację Moduł Expert 24 w Google Maps"
-								className="inline-flex shrink-0 items-center gap-1 text-[13px] font-medium text-[#0b72e7] transition hover:text-[#ef9228]"
+								aria-label={`Otwórz lokalizację ${SITE_NAME} w Google Maps`}
+								className="inline-flex shrink-0 items-center gap-1 text-[13px] font-medium text-[#0b72e7] transition hover:text-[#9a4300]"
 							>
 								Otwórz w Mapach
 								<ExternalLink className="h-3.5 w-3.5" />
@@ -164,7 +172,7 @@ export default function Footer() {
 
 						<div className="relative h-[260px] w-full">
 							<iframe
-								title="Mapa dojazdu - Moduł Expert 24, Choszczówka Rudzka 13"
+								title={`Mapa dojazdu — ${SITE_NAME}, ${CONTACT.streetAddress}`}
 								src="https://www.google.com/maps?q=Choszcz%C3%B3wka%20Rudzka%2013%2C%2005-311%20Choszcz%C3%B3wka%20Rudzka%2C%20Polska&z=16&output=embed"
 								width="100%"
 								height="100%"
@@ -177,8 +185,11 @@ export default function Footer() {
 					</div>
 				</div>
 
-				<div className="mt-12 border-t border-black/10 pt-6 text-center text-[14px] text-black/55">
-					© {new Date().getFullYear()} Moduł Expert 24. Wszelkie prawa zastrzeżone.
+				<div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-black/10 pt-6 text-center text-[14px] text-black/55 sm:flex-row">
+					<span>
+						© {new Date().getFullYear()} {SITE_NAME}. Wszelkie prawa zastrzeżone.
+					</span>
+					<ConsentSettingsButton />
 				</div>
 			</div>
 		</footer>

@@ -1,111 +1,199 @@
 "use client";
 
-import { useActionState } from "react";
-import { sendPricingForm } from "@/src/actions/contact";
-import SubmitButton from "@/components/ui/SubmitButton";
+import { useActionState, useEffect, useRef } from "react";
 
-const initialState = {
-	success: "",
-	error: "",
+import SubmitButton from "@/components/ui/SubmitButton";
+import { sendPricingForm, type ContactFormState } from "@/src/actions/contact";
+import { trackLeadConversion } from "@/src/lib/googleAds";
+
+type PricingVariant = "general" | "house" | "pavilion";
+
+type PricingFormProps = {
+	variant?: PricingVariant;
 };
 
-export default function PricingForm() {
+const initialState: ContactFormState = {};
+
+const content: Record<
+	PricingVariant,
+	{ heading: string; formHeading: string; source: string; bullets: string[] }
+> = {
+	general: {
+		heading: "Co warto ustalić przed wyceną?",
+		formHeading: "Opisz planowany obiekt",
+		source: "Formularz wyceny na stronie głównej",
+		bullets: [
+			"Przeznaczenie obiektu",
+			"Planowany metraż i układ",
+			"Lokalizacja inwestycji",
+			"Oczekiwany standard wykończenia",
+		],
+	},
+	house: {
+		heading: "Od czego zależy wycena domu?",
+		formHeading: "Chcesz wycenę domu modułowego?",
+		source: "Formularz wyceny domu modułowego",
+		bullets: [
+			"Metraż i układ pomieszczeń",
+			"Standard całoroczny lub rekreacyjny",
+			"Zakres instalacji i wykończenia",
+			"Transport oraz warunki na działce",
+		],
+	},
+	pavilion: {
+		heading: "Od czego zależy wycena pawilonu?",
+		formHeading: "Chcesz wycenę swojego pawilonu?",
+		source: "Formularz wyceny pawilonu",
+		bullets: [
+			"Wymiary i przeznaczenie",
+			"Liczba witryn oraz drzwi",
+			"Instalacje i wyposażenie",
+			"Transport oraz miejsce montażu",
+		],
+	},
+};
+
+export default function PricingForm({ variant = "general" }: PricingFormProps) {
 	const [state, formAction] = useActionState(sendPricingForm, initialState);
+	const formRef = useRef<HTMLFormElement>(null);
+	const lastTrackedSubmission = useRef<string | null>(null);
+	const selectedContent = content[variant];
+	const fieldPrefix = `pricing-${variant}`;
+
+	useEffect(() => {
+		if (!state.submissionId || lastTrackedSubmission.current === state.submissionId) {
+			return;
+		}
+
+		lastTrackedSubmission.current = state.submissionId;
+		trackLeadConversion(state.submissionId);
+		formRef.current?.reset();
+	}, [state.submissionId]);
 
 	return (
 		<section className="py-20">
 			<div className="mx-auto max-w-[1200px] px-6">
-				<div className="grid gap-12 lg:grid-cols-[1fr_auto_1fr] items-start">
-					{/* lewa kolumna */}
+				<div className="grid items-start gap-12 lg:grid-cols-[1fr_auto_1fr]">
 					<div>
-						<h2 className="text-[24px] font-semibold md:text-[30px]">
-							Dlaczego pawilon się opłaca?
-						</h2>
+						<h2 className="text-[24px] font-semibold md:text-[30px]">{selectedContent.heading}</h2>
 
 						<ul className="mt-8 space-y-4 text-[18px] leading-[1.6]">
-							<li className="flex items-center gap-3">
-								<span className="h-[8px] w-[8px] rounded-full bg-black" />
-								<span>Niski koszt inwestycji</span>
-							</li>
-
-							<li className="flex items-center gap-3">
-								<span className="h-[8px] w-[8px] rounded-full bg-black" />
-								<span>Brak prac mokrych</span>
-							</li>
-
-							<li className="flex items-center gap-3">
-								<span className="h-[8px] w-[8px] rounded-full bg-black" />
-								<span>Możliwość pracy całorocznej</span>
-							</li>
-
-							<li className="flex items-center gap-3">
-								<span className="h-[8px] w-[8px] rounded-full bg-black" />
-								<span>Brak kosztów tradycyjnej budowy</span>
-							</li>
+							{selectedContent.bullets.map((bullet) => (
+								<li key={bullet} className="flex items-start gap-3">
+									<span
+										aria-hidden="true"
+										className="mt-[10px] h-2 w-2 shrink-0 rounded-full bg-black"
+									/>
+									<span>{bullet}</span>
+								</li>
+							))}
 						</ul>
 					</div>
 
-					{/* separator */}
-					<div className="hidden lg:block w-[1px] bg-black/20 h-full" />
+					<div aria-hidden="true" className="hidden h-full w-px bg-black/20 lg:block" />
 
-					{/* prawa kolumna */}
 					<div>
 						<h2 className="text-[24px] font-semibold md:text-[30px]">
-							Chcesz wycenę swojego pawilonu?
+							{selectedContent.formHeading}
 						</h2>
 
-						<form action={formAction} className="mt-8 flex flex-col gap-5 max-w-[420px]">
-							{/* honeypot anty-spam */}
+						<form
+							ref={formRef}
+							action={formAction}
+							data-lpignore="true"
+							suppressHydrationWarning
+							className="mt-8 flex max-w-[460px] flex-col gap-5"
+						>
 							<input
 								type="text"
 								name="company"
 								tabIndex={-1}
 								autoComplete="off"
+								data-lpignore="true"
 								className="hidden"
+								aria-hidden="true"
 							/>
+							<input type="hidden" name="source" value={selectedContent.source} />
 
+							<label htmlFor={`${fieldPrefix}-name`} className="sr-only">
+								Imię
+							</label>
 							<input
+								id={`${fieldPrefix}-name`}
 								name="name"
 								type="text"
-								placeholder="Imię..."
+								placeholder="Imię"
 								required
-								className="h-[48px] rounded-full border border-black/30 px-5 outline-none focus:border-[#f1892d]"
+								minLength={2}
+								maxLength={80}
+								autoComplete="name"
+								data-lpignore="true"
+								className="h-12 rounded-full border border-black/30 px-5 outline-none focus:border-[#ef9228]"
 							/>
 
+							<label htmlFor={`${fieldPrefix}-phone`} className="sr-only">
+								Telefon
+							</label>
 							<input
+								id={`${fieldPrefix}-phone`}
 								name="phone"
 								type="tel"
-								placeholder="Telefon..."
+								placeholder="Telefon"
 								required
-								className="h-[48px] rounded-full border border-black/30 px-5 outline-none focus:border-[#f1892d]"
+								maxLength={30}
+								autoComplete="tel"
+								data-lpignore="true"
+								inputMode="tel"
+								className="h-12 rounded-full border border-black/30 px-5 outline-none focus:border-[#ef9228]"
 							/>
 
+							<label htmlFor={`${fieldPrefix}-email`} className="sr-only">
+								E-mail
+							</label>
 							<input
+								id={`${fieldPrefix}-email`}
 								name="email"
 								type="email"
-								placeholder="E-mail..."
+								placeholder="E-mail"
 								required
-								className="h-[48px] rounded-full border border-black/30 px-5 outline-none focus:border-[#f1892d]"
+								maxLength={254}
+								autoComplete="email"
+								data-lpignore="true"
+								inputMode="email"
+								className="h-12 rounded-full border border-black/30 px-5 outline-none focus:border-[#ef9228]"
 							/>
 
-							<input
+							<label htmlFor={`${fieldPrefix}-message`} className="sr-only">
+								Wiadomość
+							</label>
+							<textarea
+								id={`${fieldPrefix}-message`}
 								name="message"
-								type="text"
-								placeholder="Wiadomość..."
+								placeholder="Napisz, jaki obiekt planujesz i gdzie ma stanąć"
 								required
-								className="h-[48px] rounded-full border border-black/30 px-5 outline-none focus:border-[#f1892d]"
+								minLength={10}
+								maxLength={3000}
+								rows={4}
+								data-lpignore="true"
+								className="min-h-28 rounded-[24px] border border-black/30 px-5 py-3 outline-none focus:border-[#ef9228]"
 							/>
 
 							<div className="flex justify-center">
 								<SubmitButton size="small" />
 							</div>
 
-							{/* komunikaty */}
-							{state?.success && (
-								<p className="text-center text-sm text-green-600">{state.success}</p>
-							)}
-
-							{state?.error && <p className="text-center text-sm text-red-600">{state.error}</p>}
+							<div className="min-h-6 text-center" aria-live="polite" aria-atomic="true">
+								{state.success && (
+									<p role="status" className="text-sm font-medium text-green-700">
+										{state.success}
+									</p>
+								)}
+								{state.error && (
+									<p role="alert" className="text-sm font-medium text-red-700">
+										{state.error}
+									</p>
+								)}
+							</div>
 						</form>
 					</div>
 				</div>

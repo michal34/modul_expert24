@@ -134,7 +134,7 @@ const sections: SeoSection[] = [
 				Jeżeli obiekt ma służyć głównie sprzedaży lub usługom, zobacz także{" "}
 				<Link
 					href="/pawilony-handlowe"
-					className="font-semibold text-[#c66c0d] underline-offset-4 hover:underline"
+					className="font-semibold text-[#9a4300] underline-offset-4 hover:underline"
 				>
 					pawilony handlowe i usługowe
 				</Link>
@@ -154,6 +154,10 @@ export default function KonteneryBiurowePage() {
 			eyebrow="Modułowa przestrzeń do pracy"
 			title="Kontenery biurowe i biura modułowe"
 			lead="Stwórz biuro dopasowane do liczby pracowników, sposobu obsługi klientów i warunków lokalizacji. Moduły można konfigurować, łączyć i wyposażać w uzgodnione instalacje."
+			secondaryCta={{
+				label: "Zobacz pawilony handlowe",
+				href: "/pawilony-handlowe",
+			}}
 			highlights={[
 				{
 					title: "Elastyczny układ",

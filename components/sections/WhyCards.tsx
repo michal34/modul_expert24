@@ -8,21 +8,21 @@ type WhyCard = {
 
 const cards: WhyCard[] = [
 	{
-		title: "Ekspresowy montaż",
+		title: "Sprawny montaż",
 		description:
-			"Gotowy pawilon lub kontener montujemy w kilka dni. Większość prac powstaje w hali, dzięki czemu realizacja jest szybka i bezproblemowa",
+			"Znaczna część prac odbywa się w hali, a harmonogram transportu i montażu ustalamy dla konkretnej lokalizacji.",
 		icon: Clock,
 	},
 	{
-		title: "Atrakcyjna cena",
+		title: "Przejrzysta wycena",
 		description:
-			"Koszt budowy obiektu modułowego jest do 40% niższy niż w przypadku klasycznych budynków, bez strat jakości",
+			"Koszt określamy na podstawie wymiarów, wyposażenia, instalacji, transportu i warunków montażu.",
 		icon: PiggyBank,
 	},
 	{
 		title: "Mobilność i elastyczność",
 		description:
-			"Pawilon lub kontener można przenieść, rozbudować lub zmienić jego układ w dowolnym momencie",
+			"W zależności od projektu obiekt można rozbudować lub przenieść po wcześniejszej ocenie technicznej i formalnej.",
 		icon: Repeat,
 	},
 ];

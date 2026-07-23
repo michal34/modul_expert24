@@ -9,17 +9,17 @@ type Benefit = {
 const benefits: Benefit[] = [
 	{
 		title: "Oszczędność",
-		description: "Atrakcyjna cena i minimalne koszty utrzymania",
+		description: "Zakres i koszt dopasowane do metrażu, standardu oraz wyposażenia",
 		icon: PiggyBank,
 	},
 	{
 		title: "Ekologia",
-		description: "Ekologiczne materiały i nowoczesne, energooszczędne rozwiązania",
+		description: "Możliwość zastosowania energooszczędnych instalacji i rozwiązań materiałowych",
 		icon: Leaf,
 	},
 	{
-		title: "Szybka Budowa",
-		description: "Całkowity dom w zaledwie kilka tygodni",
+		title: "Sprawna realizacja",
+		description: "Produkcja w hali ogranicza część prac wykonywanych bezpośrednio na działce",
 		icon: Clock3,
 	},
 ];

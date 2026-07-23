@@ -41,7 +41,7 @@ export default function Faq() {
 		<section className="bg-white px-4 py-20 md:px-6 lg:px-8">
 			<div className="mx-auto max-w-[1100px]">
 				<div className="mx-auto max-w-[760px] text-center">
-					<p className="text-[14px] font-bold uppercase tracking-[0.12em] text-[#ef9228]">FAQ</p>
+					<p className="text-[14px] font-bold uppercase tracking-[0.12em] text-[#9a4300]">FAQ</p>
 
 					<h2 className="mt-3 text-[34px] font-semibold leading-tight text-[#13272f] md:text-[46px]">
 						Najczęściej zadawane pytania

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 
 import SeoLandingPage, { type SeoFaq, type SeoSection } from "@/components/seo/SeoLandingPage";
 import {
@@ -47,7 +46,7 @@ const faqs: SeoFaq[] = [
 	},
 ];
 
-const officialLinkClass = "font-semibold text-[#c66c0d] underline underline-offset-4";
+const officialLinkClass = "font-semibold text-[#9a4300] underline underline-offset-4";
 
 const sections: SeoSection[] = [
 	{
@@ -197,12 +196,12 @@ const articleSchema = {
 	mainEntityOfPage: `${SITE_URL}${PATH}`,
 	author: {
 		"@type": "Organization",
-		name: "Moduł Expert 24",
+		name: "Moduł Expert24",
 		url: SITE_URL,
 	},
 	publisher: {
 		"@type": "Organization",
-		name: "Moduł Expert 24",
+		name: "Moduł Expert24",
 		url: SITE_URL,
 		logo: {
 			"@type": "ImageObject",

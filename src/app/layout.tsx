@@ -1,17 +1,20 @@
 import type { Metadata } from "next";
-import Script from "next/script";
+
+import GoogleAdsConsent from "@/components/GoogleAdsConsent";
+import { SITE_NAME, SITE_URL } from "@/src/lib/site";
+
 import "./globals.css";
 
 export const metadata: Metadata = {
-	metadataBase: new URL("https://www.modulexpert24.pl"),
+	metadataBase: new URL(SITE_URL),
 
 	title: {
 		default: "Domy modułowe i pawilony modułowe – Mazowieckie | Warszawa | Mińsk Mazowiecki",
-		template: "%s | Moduł Expert24",
+		template: `%s | ${SITE_NAME}`,
 	},
 
 	description:
-		"Nowoczesne domy modułowe i pawilony modułowe w województwie mazowieckim. Szybka realizacja, atrakcyjna cena i wysoka jakość wykonania. Obsługujemy Warszawę, Mińsk Mazowiecki i okolice.",
+		"Domy modułowe, pawilony handlowe i kontenery biurowe w województwie mazowieckim. Projekt, produkcja, transport, montaż i indywidualna wycena.",
 
 	alternates: {
 		canonical: "/",
@@ -20,27 +23,27 @@ export const metadata: Metadata = {
 	openGraph: {
 		title: "Domy modułowe i pawilony modułowe – Mazowieckie | Warszawa | Mińsk Mazowiecki",
 		description:
-			"Producent domów modułowych i pawilonów modułowych. Szybka realizacja, wysoka jakość i nowoczesne rozwiązania dla klientów z Mazowsza.",
-		url: "https://www.modulexpert24.pl",
-		siteName: "Moduł Expert24",
+			"Domy modułowe i pawilony modułowe dla klientów z Mazowsza. Projekt, produkcja, transport, montaż i indywidualna wycena.",
+		url: SITE_URL,
+		siteName: SITE_NAME,
 		locale: "pl_PL",
 		type: "website",
 		images: [
 			{
-				url: "/images/hero.webp",
-				width: 1536,
-				height: 1024,
-				alt: "Domy modułowe i pawilony modułowe – Moduł Expert24",
+				url: "/opengraph-image",
+				width: 1200,
+				height: 630,
+				alt: `Domy modułowe i pawilony modułowe — ${SITE_NAME}`,
 			},
 		],
 	},
 
 	twitter: {
 		card: "summary_large_image",
-		title: "Domy modułowe i pawilony modułowe – Moduł Expert24",
+		title: `Domy modułowe i pawilony modułowe — ${SITE_NAME}`,
 		description:
-			"Nowoczesne domy modułowe i pawilony modułowe. Szybka realizacja i wysoka jakość wykonania.",
-		images: ["/images/hero.webp"],
+			"Domy modułowe i pawilony modułowe na Mazowszu. Projekt, produkcja, transport, montaż i indywidualna wycena.",
+		images: ["/opengraph-image"],
 	},
 
 	robots: {
@@ -67,23 +70,17 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
-		<html lang="pl">
+		<html lang="pl" data-scroll-behavior="smooth">
 			<body>
-				<Script
-					src="https://www.googletagmanager.com/gtag/js?id=AW-16524087663"
-					strategy="lazyOnload"
-				/>
-
-				<Script id="google-ads" strategy="lazyOnload">
-					{`
-				window.dataLayer = window.dataLayer || [];
-				function gtag(){dataLayer.push(arguments);}
-				gtag('js', new Date());
-				gtag('config', 'AW-16524087663');
-			`}
-				</Script>
+				<a
+					href="#main-content"
+					className="fixed left-4 top-4 z-[110] -translate-y-24 rounded-full bg-[#13272f] px-5 py-3 font-semibold text-white transition focus:translate-y-0"
+				>
+					Przejdź do treści
+				</a>
 
 				{children}
+				<GoogleAdsConsent />
 			</body>
 		</html>
 	);

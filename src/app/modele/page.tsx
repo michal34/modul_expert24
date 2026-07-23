@@ -1,30 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
-import type { Metadata } from "next";
 
+import ModelLink from "@/components/ModelLink";
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
 import { models } from "@/src/data/models";
+import { createSeoMetadata } from "@/src/lib/seo";
 
 import infoStyles from "./models-info.module.css";
 
-const SITE_URL = "https://www.modulexpert24.pl";
-
-export const metadata: Metadata = {
+export const metadata = createSeoMetadata({
 	title: "Modele pawilonów modułowych | Moduł Expert24",
 	description:
 		"Zobacz modele pawilonów modułowych Moduł Expert24. Porównaj warianty ALASKA, ASPEN, DAKOTA, DENVER, IDAHO, OKLAHOMA, UTAH i WYOMING.",
-	alternates: {
-		canonical: `${SITE_URL}/modele`,
-	},
-};
+	path: "/modele",
+});
 
 export default function ModelsPage() {
 	return (
 		<>
 			<Header />
 
-			<main className="bg-white text-neutral-950">
+			<main id="main-content" tabIndex={-1} className="bg-white text-neutral-950">
 				<section className="mx-auto max-w-6xl px-6 py-16">
 					<h1
 						style={{
@@ -51,14 +48,18 @@ export default function ModelsPage() {
 
 				<section className={infoStyles.modelsGrid}>
 					{models.map((model) => (
-						<Link key={model.slug} href={`/modele/${model.slug}`} className={infoStyles.modelCard}>
+						<ModelLink
+							key={model.slug}
+							href={`/modele/${model.slug}`}
+							source="catalog"
+							className={infoStyles.modelCard}
+						>
 							<div className={infoStyles.modelImageBox}>
 								<Image
 									src={model.thumbnail}
 									alt={`Model ${model.name} - pawilon modułowy`}
 									width={700}
 									height={450}
-									unoptimized
 									className={infoStyles.modelImage}
 								/>
 							</div>
@@ -70,7 +71,7 @@ export default function ModelsPage() {
 
 								<span>Zobacz szczegóły →</span>
 							</div>
-						</Link>
+						</ModelLink>
 					))}
 				</section>
 

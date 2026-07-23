@@ -1,16 +1,33 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 
-type BackButtonProps = {
-	redirect: string;
-};
+import { MODEL_RETURN_STORAGE_KEY } from "@/components/ModelLink";
 
-export default function BackButton({ redirect }: BackButtonProps) {
+export default function BackButton() {
+	const router = useRouter();
+
 	return (
 		<Link
-			href={redirect}
+			href="/modele"
+			onClick={(event) => {
+				let returnTarget = "/modele";
+
+				try {
+					if (window.sessionStorage.getItem(MODEL_RETURN_STORAGE_KEY) === "home") {
+						returnTarget = "/#modele";
+					}
+				} catch {
+					// Bez sessionStorage bezpiecznym miejscem powrotu jest katalog modeli.
+				}
+
+				if (returnTarget !== "/modele") {
+					event.preventDefault();
+					router.push(returnTarget);
+				}
+			}}
 			aria-label="Powrót"
 			className="
         group
@@ -31,7 +48,8 @@ export default function BackButton({ redirect }: BackButtonProps) {
         backdrop-blur-md
         transition-all
         duration-300
-        hover:bg-orange-500
+        hover:bg-[#ef9228]
+        hover:text-[#13272f]
 
         sm:bottom-auto
         sm:left-6

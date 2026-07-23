@@ -8,7 +8,6 @@ type Props = {
 
 export default function SubmitButton({ size = "large" }: Props) {
 	const { pending } = useFormStatus();
-	console.log(size);
 	const styles =
 		size === "large"
 			? {
@@ -40,7 +39,7 @@ export default function SubmitButton({ size = "large" }: Props) {
 				cursor: "pointer",
 				opacity: pending ? 0.7 : 1,
 			}}
-			className="transition-all duration-300 hover:bg-[#ef9228] hover:text-white disabled:hover:bg-[#fff7ef] disabled:hover:text-black"
+			className="transition-all duration-300 hover:bg-[#ef9228] hover:text-[#13272f] disabled:hover:bg-[#fff7ef] disabled:hover:text-black"
 		>
 			{pending ? "Wysyłanie..." : "Poproś o wycenę"}
 		</button>

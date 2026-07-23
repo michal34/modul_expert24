@@ -127,10 +127,10 @@ const sections: SeoSection[] = [
 			<>
 				Po ustaleniu potrzeb przygotowujemy indywidualną ofertę. Możesz wcześniej zobaczyć{" "}
 				<Link
-					href="/modele"
-					className="font-semibold text-[#c66c0d] underline-offset-4 hover:underline"
+					href="/domy-modulowe"
+					className="font-semibold text-[#9a4300] underline-offset-4 hover:underline"
 				>
-					dostępne modele i zakres konfiguracji
+					ofertę domów modułowych i zakres konfiguracji
 				</Link>
 				.
 			</>,
@@ -178,6 +178,11 @@ export default function DomyModuloweCenaPage() {
 					title: "Domy modułowe Mińsk Mazowiecki",
 					description: "Projekt, transport i montaż w Mińsku oraz okolicy.",
 					href: "/domy-modulowe-minsk-mazowiecki",
+				},
+				{
+					title: "Oferta domów modułowych",
+					description: "Poznaj zakres projektu, produkcji, transportu i montażu.",
+					href: "/domy-modulowe",
 				},
 				{
 					title: "Formalności",
